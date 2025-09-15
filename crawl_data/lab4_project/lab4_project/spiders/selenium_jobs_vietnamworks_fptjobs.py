@@ -75,15 +75,38 @@ class JobSpider(scrapy.Spider):
                 yield response.follow(next_href, callback=self.parse, meta={})
 
     def parse_vnw(self, response):
-        # Title: prefer h1, fallback to first heading
-        title = response.css("h1::text").get(default="").strip() or response.xpath("(//h1|//h2)[1]/text()").get(default="").strip()
-        # Company: try multiple anchors near employer area or meta tags
-        company = (response.css(".employer a::text").get(default="") or response.xpath("//meta[@property='og:site_name']/@content").get(default="")).strip()
-        location = ", ".join([t.strip() for t in response.css(".svg-icon-location ~ span::text").getall() if t.strip()])
-        salary = (response.css("span.salary::text").get(default="") or response.xpath("//span[contains(., '$') or contains(., 'VND') or contains(., 'USD')]/text()").get(default="")).strip()
-        # CSS :contains is not supported; use XPath
-        deadline = response.xpath("//span[contains(., 'Hạn nộp')]/text()").get(default="").strip()
-        description = " ".join([t.strip() for t in (response.css(".job-description *::text").getall() or response.xpath("//section[contains(., 'Mô tả') or contains(., 'Description')]//text()").getall()) if t.strip()])
+        # Title: prefer meta tag, then h1, fallback to first heading
+        title = (response.xpath("//meta[@property='og:title']/@content").get(default="") or
+                response.css("h1::text").get(default="") or 
+                response.xpath("(//h1|//h2)[1]/text()").get(default="") or
+                response.xpath("//title/text()").get(default="")).strip()
+        
+        # Company: try multiple selectors
+        company = (response.css(".employer a::text").get(default="") or
+                  response.xpath("//meta[@property='og:site_name']/@content").get(default="") or
+                  response.xpath("//*[contains(@class, 'company') or contains(@class, 'employer')]//a/text()").get(default="")).strip()
+        
+        # Location: try multiple selectors
+        location = (", ".join([t.strip() for t in response.css(".svg-icon-location ~ span::text").getall() if t.strip()]) or
+                   ", ".join([t.strip() for t in response.xpath("//*[contains(@class, 'location')]//text()").getall() if t.strip()]) or
+                   response.xpath("//*[contains(text(), 'Địa điểm') or contains(text(), 'Location')]/following::*[1]/text()").get(default="")).strip()
+        
+        # Salary: try multiple selectors
+        salary = (response.css("span.salary::text").get(default="") or
+                 response.xpath("//*[contains(@class, 'salary')]//text()").get(default="") or
+                 response.xpath("//*[contains(text(), 'Mức lương') or contains(text(), 'Salary')]/following::*[1]/text()").get(default="") or
+                 response.xpath("//span[contains(., '$') or contains(., 'VND') or contains(., 'USD')]/text()").get(default="")).strip()
+        
+        # Deadline: try multiple selectors
+        deadline = (response.xpath("//span[contains(., 'Hạn nộp')]/text()").get(default="") or
+                   response.xpath("//*[contains(text(), 'Deadline') or contains(text(), 'Hạn nộp')]/following::*[1]/text()").get(default="") or
+                   response.xpath("//*[contains(@class, 'deadline') or contains(@class, 'expire')]//text()").get(default="")).strip()
+        
+        # Description: try multiple selectors
+        description = (response.xpath("//meta[@property='og:description']/@content").get(default="") or
+                      " ".join([t.strip() for t in response.css(".job-description *::text").getall() if t.strip()]) or
+                      " ".join([t.strip() for t in response.xpath("//section[contains(., 'Mô tả') or contains(., 'Description')]//text()").getall() if t.strip()]) or
+                      " ".join([t.strip() for t in response.xpath("//*[contains(@class, 'description') or contains(@class, 'content')]//text()").getall() if t.strip()])).strip()
 
         yield {
             "site": "Vietnamworks",
@@ -97,12 +120,35 @@ class JobSpider(scrapy.Spider):
         }
 
     def parse_fpt(self, response):
-        title = response.css("h1::text").get(default="").strip() or response.xpath("(//h1|//h2)[1]/text()").get(default="").strip()
-        company = response.css(".company-title a::text").get(default="").strip() or response.xpath("//a[contains(@href, 'company')]/text()").get(default="").strip()
-        location = ", ".join([t.strip() for t in (response.css(".job-location span::text").getall() or response.xpath("//*[contains(@class,'location')]/descendant::text()").getall()) if t.strip()])
-        salary = response.css(".job-salary::text").get(default="").strip() or response.xpath("//*[contains(., 'VND') or contains(., '$') or contains(., 'USD')]/text()").get(default="").strip()
-        deadline = response.css(".expire-date::text").get(default="").strip() or response.xpath("//*[contains(., 'Hạn nộp') or contains(., 'Deadline')]/text()").get(default="").strip()
-        description = " ".join([t.strip() for t in (response.css(".job-description *::text").getall() or response.xpath("//section[contains(., 'Mô tả') or contains(., 'Description')]//text()").getall()) if t.strip()])
+        # Get title from meta tag or h1
+        title = (response.xpath("//meta[@property='og:title']/@content").get(default="") or 
+                response.css("h1::text").get(default="") or 
+                response.xpath("//title/text()").get(default="")).strip()
+        
+        # Get company from meta or specific selectors
+        company = (response.xpath("//meta[@property='og:site_name']/@content").get(default="") or
+                  response.css(".company-title a::text").get(default="") or
+                  response.xpath("//a[contains(@href, 'company')]/text()").get(default="")).strip()
+        
+        # Get location from multiple possible selectors
+        location = (response.css(".card-location::text").get(default="") or
+                   response.xpath("//span[contains(@class, 'card-location')]/text()").get(default="") or
+                   ", ".join([t.strip() for t in response.css(".job-location span::text").getall() if t.strip()])).strip()
+        
+        # Get salary - look for salary-related elements
+        salary = (response.xpath("//span[contains(@class, 'salary-icon')]/following-sibling::*[1]/text()").get(default="") or
+                 response.xpath("//*[contains(text(), 'Mức lương')]/following::*[1]/text()").get(default="") or
+                 response.xpath("//*[contains(., 'VND') or contains(., '$') or contains(., 'USD')]/text()").get(default="")).strip()
+        
+        # Get deadline
+        deadline = (response.xpath("//span[contains(text(), 'Hạn nộp CV')]/following::*[1]/text()").get(default="") or
+                   response.xpath("//*[contains(text(), 'Hạn nộp') or contains(text(), 'Deadline')]/following::*[1]/text()").get(default="") or
+                   response.css(".expire-date::text").get(default="")).strip()
+        
+        # Get description from meta or content areas
+        description = (response.xpath("//meta[@property='og:description']/@content").get(default="") or
+                      " ".join([t.strip() for t in response.css(".job-description *::text").getall() if t.strip()]) or
+                      " ".join([t.strip() for t in response.xpath("//section[contains(., 'Mô tả') or contains(., 'Description')]//text()").getall() if t.strip()])).strip()
 
         yield {
             "site": "FPTJobs",

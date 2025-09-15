@@ -116,23 +116,64 @@ def scrape_edumall(driver: webdriver.Chrome, query: str, limit: int) -> List[Cou
         parent = a.find_element(By.XPATH, "./ancestor-or-self::*[1]")
         desc = ""
         try:
-            # Try a sibling/child element that could contain a description
-            desc_el = parent.find_element(By.XPATH, ".//p | .//div[contains(@class,'description')]")
-            desc = safe_text(desc_el)
+            # Try multiple selectors for description
+            desc_selectors = [
+                ".//p[contains(@class,'description')]",
+                ".//div[contains(@class,'description')]",
+                ".//p",
+                ".//div[contains(@class,'content')]",
+                ".//span[contains(@class,'description')]"
+            ]
+            for selector in desc_selectors:
+                try:
+                    desc_el = parent.find_element(By.XPATH, selector)
+                    desc = safe_text(desc_el)
+                    if desc and len(desc) > 10:  # Only use if meaningful content
+                        break
+                except Exception:
+                    continue
         except Exception:
             pass
 
         instructor = ""
         try:
-            instr_el = parent.find_element(By.XPATH, ".//*[contains(text(),'Giảng viên')]/following::*[1]")
-            instructor = safe_text(instr_el)
+            # Try multiple selectors for instructor
+            instr_selectors = [
+                ".//*[contains(text(),'Giảng viên')]/following::*[1]",
+                ".//*[contains(@class,'instructor')]",
+                ".//*[contains(@class,'teacher')]",
+                ".//*[contains(text(),'by ')]",
+                ".//*[contains(text(),'Instructor')]"
+            ]
+            for selector in instr_selectors:
+                try:
+                    instr_el = parent.find_element(By.XPATH, selector)
+                    instructor = safe_text(instr_el)
+                    if instructor and len(instructor) > 2:
+                        break
+                except Exception:
+                    continue
         except Exception:
             pass
 
         time_info = ""
         try:
-            time_el = parent.find_element(By.XPATH, ".//*[contains(text(),'giờ') or contains(text(),'buổi') or contains(text(),'tuần')]")
-            time_info = safe_text(time_el)
+            # Try multiple selectors for time info
+            time_selectors = [
+                ".//*[contains(text(),'giờ') or contains(text(),'buổi') or contains(text(),'tuần')]",
+                ".//*[contains(text(),'hours') or contains(text(),'weeks') or contains(text(),'days')]",
+                ".//*[contains(@class,'duration')]",
+                ".//*[contains(@class,'time')]",
+                ".//*[contains(text(),'thời gian')]"
+            ]
+            for selector in time_selectors:
+                try:
+                    time_el = parent.find_element(By.XPATH, selector)
+                    time_info = safe_text(time_el)
+                    if time_info and len(time_info) > 2:
+                        break
+                except Exception:
+                    continue
         except Exception:
             pass
 

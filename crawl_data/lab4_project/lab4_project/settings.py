@@ -55,9 +55,10 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "lab4_project.pipelines.Lab4ProjectPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "lab4_project.pipelines.DuplicatesPipeline": 200,
+    "lab4_project.pipelines.MongoDBPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -124,3 +125,8 @@ DOWNLOADER_MIDDLEWARES = {
     "lab4_project.middlewares.Lab4ProjectDownloaderMiddleware": 543,
     "lab4_project.middlewares.SeleniumMiddleware": 544,
 }
+
+# MongoDB settings
+MONGO_URI = 'mongodb://localhost:27017'  # Change this to your MongoDB Atlas connection string
+MONGO_DATABASE = 'chanhtuoi_db'
+MONGO_COLLECTION = 'articles'

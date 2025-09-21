@@ -1,0 +1,14 @@
+{
+  "Total_Users": 274,
+  "Unique_Devices": 72,
+  "Unique_Brands": 9,
+  "Android_Users": 186,
+  "iOS_Users": 88,
+  "Mobile_Users": 165,
+  "Tablet_Users": 40,
+  "Desktop_Users": 69,
+  "Top_Brand": "Samsung",
+  "Top_Device": "SM-G900F",
+  "Avg_Platform_Version": 6.910948905109489,
+  "Device_Match_Rate": 6.934306569343065
+}

@@ -1,0 +1,4 @@
+use_type_name,Total_Users,Unique_Devices,Top_Platform
+Mobile,165,54,android
+Desktop,69,29,ios
+Tablet,40,9,ios

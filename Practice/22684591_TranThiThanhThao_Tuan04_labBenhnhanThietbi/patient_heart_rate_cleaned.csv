@@ -1,0 +1,15 @@
+Patient_ID,Name,Age,Weight,HR_1,HR_2,HR_3,BP_Sys_1,BP_Sys_2,BP_Sys_3,Weight_kg,HR_avg,BP_Sys_avg,BMI,Age_Group,BMI_Category,BP_Category,HR_Category
+1.0,Mickéy Mousé,56.0,70kgs,72.0,69.0,71.0,,,,70.0,70.66666666666667,,24.221453287197235,Trung cao tuổi (50-64),Bình thường,Không xác định,Bình thường
+2.0,Donald Duck,34.0,154.89lbs,,,,85.0,84.0,76.0,70.25686488,,81.66666666666667,24.31033386851211,Trung niên (30-49),Bình thường,Bình thường,Không xác định
+3.0,Mini Mouse,16.0,,,,,65.0,69.0,72.0,,,68.66666666666667,,Trẻ em (<18),Không xác định,Bình thường,Không xác định
+4.0,Scrooge McDuck,,78kgs,78.0,79.0,72.0,,,,78.0,76.33333333333333,,26.989619377162633,Không xác định,Thừa cân,Không xác định,Bình thường
+5.0,Pink Panther,54.0,198.658lbs,,,,69.0,,75.0,90.10967953599999,,72.0,31.17981990865052,Trung cao tuổi (50-64),Béo phì,Bình thường,Không xác định
+6.0,Huey McDuck,52.0,189lbs,,,,68.0,75.0,72.0,85.728888,,71.66666666666667,29.663975086505193,Trung cao tuổi (50-64),Thừa cân,Bình thường,Không xác định
+7.0,Dewey McDuck,19.0,56kgs,,,,71.0,78.0,75.0,56.0,,74.66666666666667,19.377162629757787,Thanh niên (18-29),Bình thường,Bình thường,Không xác định
+8.0,Scööpy Doo,32.0,78kgs,78.0,76.0,75.0,,,,78.0,76.33333333333333,,26.989619377162633,Trung niên (30-49),Thừa cân,Không xác định,Bình thường
+9.0,Huey McDuck,52.0,189lbs,,,,68.0,75.0,72.0,85.728888,,71.66666666666667,29.663975086505193,Trung cao tuổi (50-64),Thừa cân,Bình thường,Không xác định
+10.0,Louie McDuck,12.0,45kgs,,,,92.0,95.0,87.0,45.0,,91.33333333333333,15.570934256055365,Trẻ em (<18),Thiếu cân,Bình thường,Không xác định
+11.0,Henry Nam,,60kgs,78.0,75.0,72.0,,,,60.0,75.0,,20.761245674740486,Không xác định,Bình thường,Không xác định,Bình thường
+12.0,Michel Long,34.0,,65.0,67.0,55.0,,,,,62.333333333333336,,,Trung niên (30-49),Không xác định,Không xác định,Bình thường
+13.0,Tana Ricky,,,,,,68.0,72.0,70.0,,,70.0,,Không xác định,Không xác định,Bình thường,Không xác định
+14.0,UniLever,,,,,,,,,,,,,Không xác định,Không xác định,Không xác định,Không xác định

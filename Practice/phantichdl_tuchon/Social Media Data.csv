@@ -1,0 +1,137 @@
+Company,Industry,Social Media Presence,Follower Count,Engagement Rate (%),Brand Awareness Score,Sales Revenue (USD),Market Capitalization (USD),Employee Count,Year Founded,Headquarters
+Samsung Electronics,Electronics,High,"10,000,000",5.6,8.9,$225 billion,$352 billion,"300,000",1969,South Korea
+Apple Inc.,Technology,High,"15,000,000",6.8,9.5,$365 billion,$2.42 trillion,"147,000",1976,United States
+Huawei Technologies,Telecommunications,Medium,"5,000,000",3.2,7.2,$122 billion,Not available,"194,000",1987,China
+Sony Corporation,Electronics,High,"8,000,000",4.1,8.1,$77 billion,$138 billion,"111,700",1946,Japan
+LG Electronics,Electronics,Medium,"4,000,000",2.9,6.9,$56 billion,$17 billion,"75,000",1958,South Korea
+Panasonic Corporation,Electronics,Low,"1,000,000",1.5,5.2,$71 billion,$22 billion,"271,869",1918,Japan
+Intel Corporation,Technology,High,"7,000,000",3.8,7.8,$77 billion,$222 billion,"116,000",1968,United States
+Microsoft Corporation,Technology,High,"9,000,000",4.6,8.5,$168 billion,$2.04 trillion,"181,000",1975,United States
+Cisco Systems Inc.,Technology,Medium,"3,000,000",2.2,6.1,$49 billion,$233 billion,"80,000",1984,United States
+Dell Technologies Inc.,Technology,High,"6,000,000",3.5,7.4,$92 billion,$77 billion,"157,000",1984,United States
+Hewlett-Packard Enterprise,Technology,High,"6,500,000",3.9,7.6,$96 billion,$23 billion,"59,400",2015,United States
+Philips,Electronics,Medium,"4,500,000",2.7,6.6,$21 billion,$44 billion,"82,000",1891,Netherlands
+IBM Corporation,Technology,High,"7,500,000",4.3,8.3,$73 billion,$110 billion,"352,600",1911,United States
+Xiaomi Corporation,Electronics,High,"12,000,000",5.2,8.7,$26 billion,$50 billion,"23,798",2010,China
+Hitachi Ltd.,Electronics,Low,"1,500,000",1.8,5.6,$81 billion,$47 billion,"302,262",1910,Japan
+Toshiba Corporation,Electronics,Medium,"5,500,000",3.1,7,$35 billion,$18 billion,"132,000",1939,Japan
+Sharp Corporation,Electronics,Low,"2,000,000",2,5.8,$12 billion,$3 billion,"50,000",1912,Japan
+NEC Corporation,Technology,Medium,"3,500,000",2.5,6.4,$27 billion,$9 billion,"109,000",1899,Japan
+Siemens AG,Technology,High,"7,800,000",4.4,8.2,$85 billion,$110 billion,"295,000",1847,Germany
+Fujitsu Limited,Technology,Medium,"4,800,000",2.8,6.8,$40 billion,$18 billion,"129,000",1935,Japan
+Lenovo Group Limited,Technology,High,"10,500,000",5.1,8.8,$60 billion,$16 billion,"63,000",1984,China
+ASUSTeK Computer Inc.,Electronics,High,"8,200,000",4.2,8,$45 billion,$17 billion,"19,000",1989,Taiwan
+Acer Inc.,Technology,Medium,"4,200,000",2.6,6.5,$19 billion,$2 billion,"7,000",1976,Taiwan
+Nokia Corporation,Telecommunications,Medium,"4,300,000",2.7,6.6,$23 billion,$26 billion,"98,000",1865,Finland
+Motorola Solutions Inc.,Telecommunications,Medium,"3,200,000",2.3,6.2,$8 billion,$30 billion,"17,000",2011,United States
+BlackBerry Limited,Telecommunications,Low,"1,200,000",1.4,5,$1 billion,$4 billion,"3,000",1984,Canada
+Amazon.com Inc.,E-commerce,High,"13,500,000",5.8,9.1,$386 billion,$1.77 trillion,"1,298,000",1994,United States
+Google LLC,Technology,High,"14,000,000",6.2,9.3,$181 billion,$1.84 trillion,"135,301",1998,United States
+Facebook Inc.,Technology,High,"16,000,000",7.1,9.7,$86 billion,$1.07 trillion,"77,105",2004,United States
+Twitter Inc.,Technology,High,"11,000,000",5.3,8.6,$3 billion,$30 billion,"4,600",2006,United States
+Adobe Inc.,Technology,High,"9,500,000",4.7,8.4,$16 billion,$324 billion,"22,000",1982,United States
+Oracle Corporation,Technology,High,"8,500,000",4,7.7,$39 billion,$194 billion,"136,000",1977,United States
+Western Digital Corporation,Technology,Medium,"4,600,000",2.8,6.7,$16 billion,$20 billion,"63,400",1970,United States
+Seagate Technology,Technology,Medium,"3,600,000",2.4,6.3,$10 billion,$15 billion,"43,000",1979,United States
+Sony Corporation,Electronics,High,"8,000,000",4.1,8.1,$82 billion,$140 billion,"111,700",1946,Japan
+Panasonic Corporation,Electronics,Low,"1,000,000",1.5,5.2,$71 billion,$22 billion,"271,869",1918,Japan
+LG Electronics,Electronics,Medium,"4,000,000",2.9,6.9,$56 billion,$17 billion,"75,000",1958,South Korea
+Samsung Electronics,Electronics,High,"10,000,000",5.6,8.9,$319 billion,$553 billion,"287,439",1969,South Korea
+Apple Inc.,Technology,High,"15,000,000",6.8,9.5,$365 billion,$2.42 trillion,"147,000",1976,United States
+Huawei Technologies,Telecommunications,Medium,"5,000,000",3.2,7.2,$122 billion,Not available,"194,000",1987,China
+ZTE Corporation,Telecommunications,Medium,"3,500,000",2.1,6,$12 billion,Not available,"74,000",1985,China
+Nokia Corporation,Telecommunications,Medium,"4,300,000",2.7,6.6,$23 billion,$26 billion,"98,000",1865,Finland
+Ericsson,Telecommunications,Medium,"2,500,000",1.8,5.5,$25 billion,$35 billion,"100,735",1876,Sweden
+Cisco Systems Inc.,Technology,Medium,"3,000,000",2.2,6.1,$49 billion,$233 billion,"80,000",1984,United States
+Amazon.com Inc.,E-commerce,High,"13,500,000",5.8,9.1,$386 billion,$1.77 trillion,"1,298,000",1994,United States
+Google LLC,Technology,High,"14,000,000",6.2,9.3,$181 billion,$1.84 trillion,"135,301",1998,United States
+Microsoft Corporation,Technology,High,"9,000,000",4.6,8.5,$168 billion,$2.04 trillion,"181,000",1975,United States
+Facebook Inc.,Technology,High,"16,000,000",7.1,9.7,$86 billion,$1.07 trillion,"77,105",2004,United States
+Twitter Inc.,Technology,High,"11,000,000",5.3,8.6,$3 billion,$30 billion,"4,600",2006,United States
+Adobe Inc.,Technology,High,"9,500,000",4.7,8.4,$16 billion,$324 billion,"22,000",1982,United States
+Oracle Corporation,Technology,High,"8,500,000",4,7.7,$39 billion,$194 billion,"136,000",1977,United States
+IBM Corporation,Technology,High,"7,500,000",4.3,8.3,$73 billion,$110 billion,"352,600",1911,United States
+Intel Corporation,Technology,High,"7,000,000",3.8,7.8,$77 billion,$222 billion,"116,000",1968,United States
+Dell Technologies Inc.,Technology,High,"6,000,000",3.5,7.4,$92 billion,$77 billion,"157,000",1984,United States
+Hewlett-Packard Enterprise,Technology,High,"6,500,000",3.9,7.6,$96 billion,$23 billion,"59,400",2015,United States
+SAP SE,Technology,Medium,"4,200,000",2.4,6.3,$32 billion,$170 billion,"103,142",1972,Germany
+Accenture plc,Professional Services,High,"2,800,000",2.1,6,$50 billion,$233 billion,"569,000",1989,Ireland
+Capgemini SE,Professional Services,Medium,"1,900,000",1.6,5.3,$19 billion,$22 billion,"270,000",1967,France
+Tata Consultancy Services Limited,Information Technology,High,"3,500,000",2.6,6.5,$22 billion,$169 billion,"488,649",1968,India
+Infosys Limited,Information Technology,High,"2,800,000",2.3,6.2,$13 billion,$89 billion,"259,619",1981,India
+Wipro Limited,Information Technology,High,"2,500,000",2.1,6,$9 billion,$45 billion,"195,000",1945,India
+Cognizant Technology Solutions Corporation,Information Technology,High,"2,400,000",2,5.8,$17 billion,$38 billion,"283,100",1994,United States
+DXC Technology Company,Information Technology,Medium,"1,800,000",1.4,5.1,$19 billion,$13 billion,"138,000",2017,United States
+Atos SE,Information Technology,Medium,"1,600,000",1.3,5,$15 billion,$8 billion,"110,000",1997,France
+HCL Technologies Limited,Information Technology,Medium,"1,500,000",1.2,4.9,$11 billion,$37 billion,"168,977",1976,India
+NEC Corporation,Technology,Medium,"3,500,000",2.5,6.4,$27 billion,$9 billion,"109,000",1899,Japan
+Fujitsu Limited,Technology,Medium,"4,800,000",2.8,6.8,$40 billion,$18 billion,"129,000",1935,Japan
+Hitachi Ltd.,Technology,Low,"1,500,000",1.8,5.6,$81 billion,$47 billion,"302,262",1910,Japan
+Toshiba Corporation,Technology,Medium,"5,500,000",3.1,7,$35 billion,$18 billion,"132,000",1939,Japan
+Mitsubishi Electric Corporation,Technology,Medium,"3,000,000",2.2,6.1,$47 billion,$43 billion,"147,000",1921,Japan
+NTT DATA Corporation,Information Technology,Medium,"2,200,000",1.9,5.7,$19 billion,$24 billion,"129,000",1988,Japan
+Ricoh Company Ltd.,Electronics,Medium,"3,200,000",2.3,6.2,$18 billion,$4 billion,"99,038",1936,Japan
+Canon Inc.,Electronics,Medium,"3,800,000",2.6,6.5,$34 billion,$37 billion,"197,776",1937,Japan
+Konica Minolta Inc.,Electronics,Medium,"2,500,000",2,5.8,$9 billion,$6 billion,"44,000",2003,Japan
+Xerox Corporation,Technology,Medium,"2,500,000",1.9,5.7,$7 billion,$3 billion,"26,100",1906,United States
+Seiko Epson Corporation,Electronics,Medium,"2,800,000",2.2,6.1,$11 billion,$15 billion,"76,647",1942,Japan
+Brother Industries Ltd.,Electronics,Medium,"2,200,000",1.7,5.4,$6 billion,$2 billion,"37,498",1908,Japan
+Lexmark International Inc.,Technology,Medium,"1,600,000",1.3,5,$3 billion,Not available,"8,000",1991,United States
+Honeywell International Inc.,Industrial,High,"2,500,000",2.3,6.2,$36 billion,$141 billion,"113,000",1906,United States
+Emerson Electric Co.,Industrial,High,"1,800,000",1.9,5.7,$17 billion,$56 billion,"76,500",1890,United States
+ABB Ltd.,Industrial,Medium,"1,900,000",1.6,5.3,$26 billion,$67 billion,"147,000",1988,Switzerland
+Siemens AG,Technology,High,"7,800,000",4.4,8.2,$85 billion,$110 billion,"295,000",1847,Germany
+Schneider Electric SE,Industrial,High,"2,200,000",2,5.8,$30 billion,$68 billion,"137,000",1836,France
+Rockwell Automation Inc.,Industrial,Medium,"1,200,000",1.4,5.1,$9 billion,$30 billion,"23,000",1903,United States
+Johnson Controls International plc,Industrial,Medium,"2,000,000",1.8,5.5,$30 billion,$41 billion,"91,000",1885,Ireland
+Eaton Corporation plc,Industrial,Medium,"1,500,000",1.5,5.2,$21 billion,$46 billion,"97,000",1911,Ireland
+Parker Hannifin Corporation,Industrial,Medium,"1,400,000",1.3,5,$14 billion,$33 billion,"61,000",1917,United States
+Mitsubishi Electric Corporation,Technology,Medium,"3,000,000",2.2,6.1,$47 billion,$43 billion,"147,000",1921,Japan
+Festo AG & Co. KG,Industrial,Medium,"1,200,000",1.3,5,$3 billion,Not available,"21,200",1925,Germany
+Omron Corporation,Technology,Medium,"2,500,000",2.1,6,$8 billion,$42 billion,"38,314",1933,Japan
+Keyence Corporation,Technology,Medium,"1,800,000",1.6,5.3,$5 billion,$140 billion,"8,719",1974,Japan
+SMC Corporation,Industrial,Medium,"1,500,000",1.5,5.2,$4 billion,$31 billion,"19,595",1959,Japan
+Advantest Corporation,Technology,Medium,"1,200,000",1.4,5.1,$3 billion,$9 billion,"5,566",1954,Japan
+Yokogawa Electric Corporation,Industrial,Medium,"1,100,000",1.3,5,$4 billion,$14 billion,"19,600",1915,Japan
+3M Company,Industrial,High,"3,200,000",2.5,6.4,$33 billion,$114 billion,"96,163",1902,United States
+BASF SE,Chemical,High,"1,800,000",2,5.8,$78 billion,$99 billion,"110,000",1865,Germany
+Dow Inc.,Chemical,High,"1,500,000",1.7,5.4,$39 billion,$55 billion,"54,000",2019,United States
+DuPont de Nemours Inc.,Chemical,High,"1,200,000",1.5,5.2,$20 billion,$45 billion,"35,000",1802,United States
+Air Liquide S.A.,Industrial,High,"1,500,000",1.7,5.4,$21 billion,$66 billion,"67,000",1902,France
+Linde plc,Industrial,High,"1,300,000",1.6,5.3,$28 billion,$155 billion,"80,000",1879,Ireland
+Shin-Etsu Chemical Co. Ltd.,Chemical,Medium,"1,200,000",1.4,5.1,$12 billion,$66 billion,"20,664",1926,Japan
+Sumitomo Chemical Co. Ltd.,Chemical,Medium,"1,100,000",1.3,5,$14 billion,$35 billion,"33,297",1913,Japan
+Mitsubishi Chemical Holdings Corporation,Chemical,Medium,"1,000,000",1.2,4.9,$21 billion,$39 billion,"69,477",1933,Japan
+Huntsman Corporation,Chemical,Medium,"900,000",1.1,4.8,$9 billion,$5 billion,"10,000",1970,United States
+Ashland Global Holdings Inc.,Chemical,Medium,"800,000",1,4.7,$8 billion,$3 billion,"4,600",1924,United States
+Eastman Chemical Company,Chemical,Medium,"700,000",0.9,4.6,$11 billion,$15 billion,"14,500",1920,United States
+Clariant AG,Chemical,Medium,"600,000",0.8,4.5,$7 billion,$3 billion,"13,377",1995,Switzerland
+Arkema SA,Chemical,Medium,"500,000",0.7,4.4,$9 billion,$10 billion,"20,500",2004,France
+Croda International Plc,Chemical,Medium,"400,000",0.6,4.3,$3 billion,$9 billion,"4,500",1925,United Kingdom
+Neste Oyj,Energy,Medium,"32,000",0.6,3.8,$44 billion,$20 billion,Finland,1948,Finland
+Enel SpA,Energy,High,"68,000",0.8,4.6,$91 billion,$100 billion,Italy,1962,Italy
+E.ON SE,Energy,High,"75,000",0.7,4.5,$51 billion,$54 billion,Germany,2000,Germany
+Dominion Energy Inc.,Energy,High,"21,000",0.6,4.4,$63 billion,$16 billion,United States,1909,United States
+TotalEnergies SE,Energy,High,"107,000",0.9,4.9,$123 billion,$152 billion,France,1924,France
+Chevron Corporation,Energy,High,"48,600",0.8,4.7,$141 billion,$142 billion,United States,1911,United States
+BP plc,Energy,High,"73,000",0.9,4.8,$118 billion,$282 billion,United Kingdom,1909,United Kingdom
+Royal Dutch Shell plc,Energy,High,"90,000",1,5,$189 billion,$396 billion,Netherlands,1907,Netherlands
+Exxon Mobil Corporation,Energy,High,"71,000",1,5,$178 billion,$264 billion,United States,1999,United States
+Equinor ASA,Energy,High,"20,000",0.7,4.6,$73 billion,$80 billion,Norway,1972,Norway
+Gazprom,Energy,High,"455,000",1,5,$69 billion,$130 billion,Russia,1989,Russia
+Rosneft,Energy,High,"244,600",0.9,4.9,$53 billion,$133 billion,Russia,1993,Russia
+Lukoil,Energy,High,"110,000",0.8,4.7,$50 billion,$113 billion,Russia,1991,Russia
+PetroChina Company Limited,Energy,High,"464,400",1,5,$104 billion,$322 billion,China,1999,China
+Sinopec,Energy,High,"440,000",1,5,$119 billion,$431 billion,China,2000,China
+CNOOC Limited,Energy,High,"19,000",0.7,4.6,$65 billion,$26 billion,China,1999,China
+Chesapeake Energy Corporation,Energy,Medium,"3,400",0.3,4.2,$5 billion,$8 billion,United States,1989,United States
+Eni S.p.A.,Energy,High,"31,000",0.7,4.5,$66 billion,$94 billion,Italy,1953,Italy
+ConocoPhillips,Energy,High,"10,400",0.6,4.4,$70 billion,$75 billion,United States,1917,United States
+Marathon Petroleum Corporation,Energy,High,"60,350",0.8,4.7,$43 billion,$136 billion,United States,2005,United States
+Occidental Petroleum Corporation,Energy,High,"11,700",0.6,4.3,$20 billion,$25 billion,United States,1920,United States
+Pioneer Natural Resources Company,Energy,High,"4,300",0.4,4.2,$18 billion,$11 billion,United States,1997,United States
+National Grid plc,Utilities,High,"22,000",0.7,4.4,$45 billion,$22 billion,United Kingdom,1990,United Kingdom
+EDF (Électricité de France),Utilities,High,"160,000",0.9,4.8,$55 billion,$75 billion,France,1946,France
+"NextEra Energy, Inc.",Utilities,High,"14,300",0.6,4.3,$146 billion,$20 billion,United States,1925,United States
+Duke Energy Corporation,Utilities,High,"27,000",0.7,4.5,$75 billion,$26 billion,United States,1904,United States
+"Tokyo Electric Power Company Holdings, Inc.",Utilities,High,"37,000",0.8,4.6,$40 billion,$64 billion,Japan,1951,Japan

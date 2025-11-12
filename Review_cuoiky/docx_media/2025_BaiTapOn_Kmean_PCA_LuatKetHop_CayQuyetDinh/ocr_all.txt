@@ -1,0 +1,2325 @@
+===== image1.png =====
+import pandas as pd
+
+data = {
+
+[25, 34, 22, 27, 33, 33, 31, 22, 35, 34, 67, 54, 57, 43, 50, 57, 59, 52, 65, 47, 49, 48, 35, 33, 44, 45, 38,
+43, 51, 46],
+
+[79, 51, 53, 78, 59, 74, 73, 57, 69, 75, 51, 32, 40, 47, 53, 36, 35, 58, 59, 58, 25, 20, 14, 12, 20, 5, 29, 27,
+8,7]
+
+df = pd.DataFrame(data)
+dF head()
+
+25 79
+34 51
+22 53
+2 7
+33 59
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn,cluster import KMeans
+
+(25, 34, 22, 27, 33, 33, 31, 22, 35, 34, 67, 54, 57, 43, 50, 57, 59, 52, 65, 47, 49, 48, 35, 33, 44, 45, 38,
+43, 51, 46],
+
+[79, 51, 53, 78, 59, 74, 73, 57, 69, 75, 51, 32, 40, 47, 53, 36, 35, 58, 59, 50, 25, 20, 14, 12, 20, 5, 29, 27,
+8, 7]
+
+df = pd.Datarrame(data)
+kmeans = KHeans(n_clusters=3).f1t(df)
+
+centroids = kmeans.cluster_centers_
+print (centroids)
+
+plt.scatter(df['x"], df['y'], c-kmeans.labels_.astype(float), s=5, alpha=2.5)
+plt.scatter(centroids[:, @], centroids[:, 1], c='ned', s=50)
+plt.show()
+
+
+
+===== image10.png =====
+from sklearn,cluster import KMeans
+import pandas as pd
+
+# Dữ liệu gia
+
+GF = pd.Datarrane({
+
+[1, 1.5, 5, 6, 9, 10],
+[2, 1.8, 8, 7.5, 1, 2]
+
+tạo mô hinh KHeans
+KHeans(n_clusters=3, random_state=42)
+
+# Huấn luyện mô hình
+kmeans Fit (F)
+
+# In kết qua
+print (“whan cum:
+print("Tam cum
+
+kmeans.labels_)
+„ kmeans.cluster_centers_)
+
+Nhãn cụm: [2 2 @ @ 1 4]
+
+Tam cụm: [[5.5 7.75]
+[9.5 1.5]
+[1.25 1.9 ]]
+
+c:\Users\ADMIN\AppData\Local \Programs\Python\Python311\Lib\site-packages\sklearn\cluster\ _kmeans.py:1416: FutureWarning: The default v
+super()._check_params_vs_input(X, default_n_init-10)
+
+
+
+===== image11.png =====
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from apyori import Bprior’)
+
+import pandas as pd
+from mixtend.frequent patterns import ŠpF#ØP3, association_rules
+
+# Dữ liệu mẫu (gid hang)
+dataset = [
+['sữa', "banh mi", 'trứng'],
+['sữa', 'bánh mì"],
+['bánh mi*, 'bơ'],
+['sữa', 'bơ'],
+['trứng', 'bơ', 'bánh mi*]
+
+1
+
+# Chuyển dit liệu sang dạng DataFrame one-hot
+
+from m1xtend.preprocessing import TransactionEncoder.
+te = TransactionEncoder()
+
+te_data = te.fit_transform(dataset)
+
+df = pd.DataFrame(te_data, columns=te.columns_)
+
+# Tim các tap phổ biến (frequent itemsets)
+frequent_itemsets - BprioPi(df, min_support=0.4, use_colnames=True)
+
+# Sinh luật kết hợp
+rules = association_rules(frequent_itemsets, metri
+
+"Lift", min_threshold=1.@)
+
+print (frequent_itemsets)
+print(rules)
+
+
+===== image12.png =====
+AH RUNRO
+
+..
+
+support itemsets
+
+0.8 (bánh mi)
+0.6 (bo)
+0.6 (sữa)
+0.4 (tring)
+
+0.4 (bánh mi, bo)
+0.4 (bánh mi, sữa)
+9.4 (banh mi, tring)
+antecedents consequents antecedent support consequent support support
+(bánh mi) (trứng) 0.8 0.4 84 \
+(tring) (bánh mi) 0.4 0.8 0.4
+
+confidence lift representativity leverage conviction zhangs_metric
+0.5 1.25 1.0 0.08 12 1.008800 \
+1.0 1.25 1.0 0.08 inf 0.333333
+
+jaccard certainty kulczynski
+@.5 0.166667 0.75
+0.5 1.000000 0.75
+
+frequent_itemsets = apriori(df, min_support=
+Cột Ý nghĩa
+support Độ phổ biến (support) cla tap mat hang - ty lệ giao dich chứa tap đó.
+Vi dy: (bánh mi) có support = @.8 nghia 18 80% giao dich có “bánh mi”.
+itemsets  Danh sách các mặt hang thường xuất hiện cing nhau.
+Vi dy: (bánh mi, bo) xuất hiện trong 40% giao dich.
+rules = association _rules(frequent_itemsets, metric
+Hỗi hang là một luật kết hợp dang:
+antecedents > consequents
+Nếu mua 'bánh mì' thi sé mua thêm 'trứng'
+antecedent support
+giao dich chia tap antecedent.
+> bánh mi: 9.8 > 80% giao dich có bánh mi.
+consequent support
+Ty lệ giao dich chia tap consequent.
+> trig: @.4 > 40% giao dich cé tring.
+$ support
+Ty 18 giao dich chứa ca antecedent va consequent.
+> (bánh mi, tring) = 0.4 > 40% giao dich có cả hai món.
+$ confidence
+Xác suất mua consequent khi đã mua antecedent:
+confidence =(support(antecedent U consequent))/support(antecedent)
+> Với luật (bánh mi) > (trig):
+conf idence=0.4/0.8-0.5
+
+.4, use_colnames=True)
+
+lift’, min_threshold:
+
+
+
+===== image13.png =====
+$ confidence
+Xác suất mua consequent khi đã mua antecedent:
+
+confidence =(support(antecedent U consequent))/support(antecedent)
+
+> Với luật (bánh mi) > (trig):
+
+conf idence=0.4/0.8-0.5
+
+> Nghia 18: 5@% người mua bánh mi cing mua trứng.
+
+$ lift
+
+Mic độ liên hé (tang cường) giữa antecedent va consequent:
+
+Lift=confidence/support (consequent)
+
+> (bánh mi) > (tring) có lift = 1.25
+
+Vi 1.25 > 1 > hai mặt hang có mối liên hệ tích cực (có xu hướng mua cùng nhau).
+
+Nếu lift = 1 > độc lập.
+
+Nếu lift < 1 + c6 xu hướng không mua cùng nhau.
+
+Các chi số bổ sung (nếu ban bgt thêm trong association_rules):
+
+Cột Ý nghĩa
+
+leverage  Độ lệch so với độc lập: support(AUB) - support(A)*support(B). Cang cao > càng mạnh.
+conviction anh giá độ chắc chắn của luật: (1 - support(B)) / (1 -confidence). Nếu > = > lugt rat manh.
+zhangs_metric Mt thước do khác cân bang giữa lift va confidence.
+jaccard Độ tương dong giữa 2 tap: support(AUB)/support(AUB).
+certainty, kulczynski Cc thước do thống kê khác dé đánh gid mức
+Diễn giải nhanh
+
+L Giải thích ý nghĩa
+
+(bánh mi) > (trứng) 48% giao dich có cả 2 món, 50% người mua bánh mi cũng mua trứng, lift = 1.25 > hai món có xu hung mua cùng nhau.
+(tring) > (bánh mi) 160% người mua trứng cing mua bánh mi (confidence = 1.0), lift = 1.25 > quan hé rất manh, vi ai mua tring đều mua bánh
+
+của luật.
+
+đáng tin
+
+
+
+===== image14.png =====
+# Loc top 5 luật có lift cao nhat
+topS_lift = rules.sort_values(by="lift’, ascending-False).head(5)
+
+print(“Top 5 luật kết hợp mạnh nhất (theo Lift):”)
+print(tops_1ift[[ 'antecedents', "consequents', ‘support’, ‘confidence’, 'lift']])
+
+Top 5 luật kết hợp mạnh nhất (theo Lift):
+antecedents consequents support confidence lift
+
+@ (bánh mi) (trứng) 0.4 0.5 1.25
+
+1 (trứng) (banh_mi) 0.4 1.0 1.25
+
+#Lọc theo confident
+
+topS_conf = rules.sort_values(by=" confidence’, ascending-False) .head(5)
+print(“Top 5 luật kết hợp mạnh nhất (theo Confidence):")
+
+prãnt(topS_conf[[ "antecedents', "consequents', ‘support’, ‘confidence’, 'lift']])
+
+Top 5 luật kết hợp mạnh nhất (theo Confidence):
+antecedents consequents support confidence lift
+
+1 (trứng) (bánh m) 0.4 1.0 1.25
+
+@ (bánh mi) (trứng) 0.4 0.5 1.25
+
+#NEu muốn loc đông thời theo cả hai (vi dy confidence > 9.6 va lift > 1.2)
+filtered_rules = rules[(rules[‘confidence’] > @.6) & (rules['lift'] > 1.2)]
+topS_filtered = filtered_rules.sort_values(by="lift’, ascending=False).head(5)
+
+print("Top 5 luật có Confidence > 0.6 va Lift > 1.2
+print(topS_filtered[[ ‘antecedents’, 'consequents', ‘support’, ‘confidence’, 'lift']])
+
+Top 5 luật có Confidence > 0.6 va Lift > 1.2:
+antecedents consequents support confidence lift
+1 (trứng) (banh_mi) 0.4 1.0 1.25
+
+
+===== image15.png =====
+rules display = rules.copy()
+Fules_display[ 'antecedents'] = rules_display[ ‘antecedents’ ].apply (lambda
+Fules_display[ 'consequents'] = rules_display[ "consequents'].apply(lanbda x:
+topS = rules display.sort_values(by='lift, ascending=False) .head(5)
+
+print(topS[[ 'antecedents', "consequents', ‘support’, ‘confidence’, 'lift']])
+
+1, 1.join(11st(x)))
+„ 1-3oin(11st(x)))
+
+antecedents consequents support confidence lift
+
+) bánh mì H 0.4 0.5 1.25
+1 trứng  bánh mi 0.4 1.0 1.25
+
+
+===== image16.png =====
+# Vẽ biểu dd phan tán 3 biến (Support - Confidence - Lift)
+import matplotlib.pyplot as plt
+# Nếu ban chưa chuyển frozenset thành chuỗi (dé gắn nhãn dễ doc)
+Fules[ "antecedents_strˆ] = rules["antecedents'].apply(lambda x: ', '.Join(1ist(x)))
+Fules[ "consequents_str*] = rules["consequents']-apply(lambda x: *, '.join(1ist(x)))
+p1t.figune(figsize=(8,6))
+scatter = p1t.scatter(rules[ 'support'], rules[ "confidence']„
+c=nules['lift'], cmap="viridis’, s=199, alpha-0.7)
+
+plt.colorbar(scatter, label="Lift’)
+
+plt.title('Biểu đô luật kết hợp: Support - Confidence - Lift")
+
+plt.xlabel ("Support")
+
+plt.ylabel("Confidence’ )
+
+# Gắn nhăn cho các điểm có lift cao
+
+for 1 in range(len(rules)):
+
+Gf rules['lift'].iloc[1] > 1.2: # chi hiển thi cdc luật mạnh
+plt.text(rules[ support’ ].iloc[i], rules[ ‘confidence’ ].iloc[i],
+
+f"{rules[ "antecedents_str'].1loc[1]}>{rules[ 'consequents_stn'].1loc[1]}",
+fontsize-8, rotation-25)
+
+p1t.show()
+
+p1t.figune(figsize=(8,6))
+
+scatter = p1t.scatter(rules[ 'support'], rules[ "confidence']„
+c=nules['lift'], cmap="viridis’, s=199, alpha-0.7)
+
+plt.colorbar(scatter, label="Lift’)
+
+plt.title('Biểu đô luật kết hợp: Support - Confidence - Lift")
+
+plt.xlabel ("Support")
+
+plt.ylabel("Confidence’ )
+
+# Gắn nhăn cho các điểm có lift cao
+
+for 1 in range(len(rules)):
+
+Gf rules['lift'].iloc[1] > 1.2: # chi hiển thi cdc luật mạnh
+plt.text(rules[ support’ ].iloc[i], rules[ ‘confidence’ ].iloc[i],
+
+f"{rules[ "antecedents_str'].1loc[1]}>{rules[ 'consequents_stn'].1loc[1]}",
+fontsize-8, rotation-25)
+
+plt.show()
+
+
+===== image17.png =====
+Biểu dé luật kết hop: Support, .Gonfidence - Lift
+
+°
+©
+
+s
+s
+s
+s
+ã
+ö
+
+©
+s
+
+.
+
+A
+0.380 0.385 0.390 0.395 0.400 0.405 0.410 0.415 0.420
+Support
+
+
+
+===== image18.png =====
+Biểu dé luật kết hop: Support, .Gonfidence - Lift
+
+0.400 0.405 0.410 0.415 0.420
+Support
+
+Mỗi cham = một luật kết hợp. Truc X = Support (46 phổ biến). Truc Y = Confidence (độ tin cậy). Mau sc = Lift (mức độ liên két mạnh). Cham mau sáng hon ¬ Lift cao hơn > Luật mạnh hon.
+
+
+===== image19.png =====
+top = rules. copy
+
+tops tops -apply(lambda x -Join(list(x))
+tops tops -apply(lambda x -Join(list(x))
+topS = topS.sort_values(by= „ ascending=False) .head(5
+pit. Figure(figsize=(8,5)
+plt.barh(range(len(topS)), top5[ 1, color=
+p1t.yticks(range(1en(tops))„
+[f"{a} > {b}" for a, b in zip(tops tops )1
+p1t.x1abel.
+plt.title
+plt.gca().invert_yaxis
+p1t. show
+
+Top 5 luật kết hop manh nhat (theo Lift)
+
+banh mi ¬ tring
+
+trứng ¬ bánh mi
+
+
+
+===== image2.png =====
+: FutureWarning: The default value of `n initˆ will change from 19 to ‘auto’ in 1.4.
+
+warnings .warn(
+[[29.6 66.8]
+[55.1 46.1]
+[43.2 16.7]
+
+
+
+===== image20.png =====
+import numpy as np
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from apyori import apriori
+
+store_data = pd.read_csv('./stone_data.csv", header-None)
+store_data.head()
+
+° 1 2 B 4 m 7 s 9
+
+etabi whol tta tomat
+
+shrimp almonds avocado X99ei2bes r gieen ole yams Cottage energy tomato
+
+mix grapes _weat flour cheese drink - Juice
+
+burgers meatballs cggs NaN NaN NaN NaN NaN NaN NaN
+
+chutney NaN NaN NaN NaN NaN NaN NaN NaN NaN
+
+turkey avocado NaN NaN NaN NaN NaN NaN NaN NaN
+ineral hole wheat
+
+mineral milk — SPeTSY wholewhear oreen tea NaN NaN NaN NaN NaN
+water bar fice
+
+records = []
+for i in range(@, 7501):
+records. append([str(store_data.values[i,j]) for j in range(@, 29)])
+
+association_rules = apriori(records, min_support=Ð.0045,
+association _results = list(association_rules)
+
+n_confidence=0.2, min lift-3, min_length=2)
+
+min_support=0.0045, min_confidence-0.2, min lift-3, min_length=2
+—
+
+min length càng dai cang ít luật va ngược lei
+
+min_support càng lớn thi càng k khám phá de gi, tối thigu là @ thi nó khán phd hét
+min_length: Lugt càng dai thi cang chi tiết va trừu tượng thấp =
+
+10
+low fat
+yogurt
+NaN
+NaN
+NaN
+
+NaN
+
+green
+tea
+
+NaN
+NaN
+NaN
+
+NaN
+
+2
+honey
+
+NaN
+NaN
+NaN
+
+NaN
+
+B
+
+salad
+
+NaN
+NaN
+NaN
+
+NaN
+
+it sy lya chon, luật cng ngắn thi trừu trượng cao va it chi tiết
+
+14
+
+mineral
+water
+
+NaN
+NaN
+NaN
+
+NaN
+
+salmoi
+
+Nal
+Nal
+Nal
+
+Nal
+
+
+===== image21.png =====
+*\nmin_support=.0045, min_confidence=Ð.2, min_lift=3, min length-2\n4 gid tri nay có ý nghĩa 1a gi, khi giá tri tang giảm thi anh hưởng ntn\nmin_length cang dai càng it luật va ngược lại\nmin ‹
+
+print (len(association_results))
+
+print (association _results[@])
+
+Pytho
+
+
+
+===== image22.png =====
+for item in association results:
+
+# first index of the inner list
+# Contains base item and add item
+pair = item[@]
+
+items = [x for x in pair]
+
+print("Rule: " + items[@] +
+
+>
+
+#second index of the inner list
+print(“support: ” + str(item[1]))
+
+#third index of the list located at eth
+
+#of the third index of the inner list
+
+print("Lift: " + str(item[2][@][3]))
+print(
+
++ items[1])
+
+print("Confidence: ” + str(1tem[2][9][2]))
+
+Rule: light cream -> chicken
+Support: @.004532728969470737
+Confidence: @.29059829059829057
+Lift: 4.84395061728395
+
+Rule: mushroom cream sauce -> escalope
+Support: @.005732568990861226
+Confidence: @.3006993006993007
+
+Lift: 3.79832696715049
+
+Rule: pasta -> escalope
+Support: @.005865884548726837
+Confidence: @.3728813559322034
+Lift: 4.700811850163794
+
+Rule: herb & pepper -> ground beef
+Support: @.015997866951073192
+Confidence: 9.3234501347708895
+Lift: 3.2919938411349285
+
+Rule: ground beef -> tomato sauce
+Support: @.005332622317024397
+Confidence: @.3773584905660377
+Lift: 3.840659481324083
+
+
+
+===== image23.png =====
+Rule: herb & pepper -> ground beef
+Support: @.015997866951073192
+Confidence: 9.3234501347708895
+Lift: 3.2919938411349285
+
+Rule: ground beef -> tomato sauce
+Support: @.005332622317024397
+Confidence: @.3773584905660377
+Lift: 3.840659481324083
+
+Support: @.004532728969470737
+Confidence: @.28813559322033894
+Lift: 3.0228043143297376
+
+
+
+===== image24.png =====
+1. Principal component analysis là gi?
+Phuong pháp dựa trén phương pháp tuyến tinh
+
+2. Myc dich cia PCA
+
+- Khám phá được tương quan tuyến tinh cla da biến
+
+- Giảm thiểu số lượng các cột dit liệu (biến sé) nhẩm giúp chi quan tâm đến các cột có tác động mạnh với nhau.
+
+-> Giảm thiểu số chiều dit liệu. Hay nói cách khác thay vi phải phan tích trên toan bộ các cột dit liệu thi ta sé
+
+giảm thiểu nhằm phan tích trên cdc cột trong tam.
+
+3. PCA thuộc nhóm học máy nào?
+
+Un-supervised
+
+4. Ý nghĩa biểu diễn tap dit liệu bang các components (PC)
+
+5. Hiểu được dai lugng proportion of variance: Biéu diễn % sy da dang của tập dit liệu con giữ được sau khi dùng các component để biểu diễn
+
+6. Cac x4c dinh bao nhiéu component dé biéu Ả Chart (Elbow test)
+
+7. Đọc va higu thong tin dữ liệu trén từng component: Kiém tra xem mỗi component dang dai diện cho những cột dữ liệu nào trong tép dữ liệu ban dau
+
+from sklearn,decomposition import PCA
+from sklearn.preprocessing import Standardscaler
+from bioinfokit.analys import get_data
+
+import numpy as np
+
+import pandas as pd
+
+df = get data('gexp').data
+dF .head(2)
+
+A B G D E F
+O 450570 326036 -124940 889807 805955 -0.842803
+1 350856 166079 -1.85668 -257336 -137370 1.196000
+
+df st = StandandScalen().fit_transform(df)
+pd.DataFname(df_st, columns=df.columns) .head(2)
+
+A B G D l F
+0 0619654 0448280 -0.240867 2457058 2304732 -0331489
+1 0342286 -0041499 -0428652 -1214732 -0877151 0.474930
+
+
+
+===== image25.png =====
+La lớp chuẩn héa dữ liệu nam trong thy vién scikit-learn (cy thé: from sklearn.preprocessing import StandardScaler).
+Dung dé chuẩn hóa các đặc trung (features) sao cho mỗi cột có:
+
+Trung binh (mean) = @
+
+Độ lệch chuẩn (standard deviation)
+> Công thức chuẩn héa ting giá tri
+
+al
+
+tri gốc,H 1a trung bình của cOt,o 18 độ lệch chuẩn của
+-fit_transform(df)
+
+fit() > Tinh trung bình va độ lệch chuẩn cia từng ct trong df.
+transform() > Ap dung phép chudn hóa (z-score) cho từng giá tri trong df.
+
+.fit_transform() = kết hợp 2 bước trén trong một dong duy nhat.
+
+Kết qua tra về 18 một mang NumPy (numpy.ndarray), không còn thông tin tên cot.
+
+pd.DataFrame(df_st, columns=df.columns)
+
+Vi StandardScalen trả về một mang numpy, nên ta can chuyển lai thành DataFrame dé dé doc va giữ tên c|
+columns=df.columns giúp đặt lại tiêu đề cột y như trong DataFrame ban dau.
+
+pca_out = PCA().fit(df_st)
+pca_out.explained_variance_ratio,
+np.cumsum(pca_out.explained_variance_ratio_)
+
+array([®.2978742 , 9.57268672, 9.80450114, @.99741752, @.99886105,
+1 )
+
+
+===== image26.png =====
+pca_out = PCA().fit(df_st)
+pca_out.explained_variance_ratio_
+np.cumsum(pca_out.explained_variance_ratio_)
+
+array([@.2978742 , @.57268672, @.80450114, 9.99741752, @.99886105,
+1- )
+
+rom sklearn.decomposition import PCA
+
+Dung dé giảm số chiều dir 1igu ma vẫn giữ lại phn lớn thông tin (phương sai).
+
+Vi du:
+
+Nếu dữ liệu có 19 cột, PCA có thé rứt gon xuống 2 hoặc 3 thành phan chinh (principal components) giúp:trực quan hóa dễ hon (vẽ 2D, 3D),giảm nhiễu,tăng tốc độ mô hình.
+-fit(df_st)
+
+fit() giúp PCA tim ra cc trục (principal components) - là các hướng trong không gian dir liệu có phương sai lớn nhất.
+d£ st là dir liệu đã chudn hóa bing StandardScaler (rat quan trong, vi PCA nhạy cảm với scale).
+
+Sau khi .fit(), PCA “hiểu” được cau trúc phan tan cia dữ liệu.
+
+pca_out.explained variance_ratio_
+
+Là thuộc tính rất quan trọng của PCA.
+
+Nó trả về một mang (array) chứa ty lệ phương sai được giải thich bởi từng thành phan chính.
+
+pca_out.explained variance_ratio_
+
+# Output:
+
+array([@.72, 9.18, 9.06, 9.04])
+
+Nghĩa là
+
+Thanh phan 1 (PC1) giải thích 72% phương sai dir liệu,
+
+Thanh phan 2 giải thich 18%,
+
+Thanh phan 3 va 4 chi đóng góp nhỏ (6% va 4%).
+
+Nếu cộng tất cd lai = 1.0 (hay 100%), nghĩa 1a tổng phương sai ban dau.
+
+@ Ý nghĩa thực tế
+
+Kết quả Ý nghĩa
+
+pca_out.explained variance ratio [0]  Tỷ lệ thông tin (phương sai) ma thành phần chính dau tiên giữ lại.
+np.cumsum(pca_out.explained variance ratio_)Tổng tích lũy ty lệ phương sai - giúp ban biết can bao nhiêu thành phan dé giữ lai, vi dy 95% thông tin.
+
+
+===== image27.png =====
+np.cumsum(pca_out.explained_variance_ratio_)
+
+anray([9.2978742 , 9.57268672, 9.80450114, @.99741752, @.99886105,
+1- )
+
+from sklearn.preprocessing import StandardScaler
+
+from sklearn,decomposition import PCA
+import pandas as pd
+
+# Dữ liệu mu
+
+df = pd.DataFrame({
+oat: [1, 2, 3, 4, 5],
+'x2': [2, 4, 6, 8, 18],
+*xa': [5, 3, 6, 2, 8]
+
+»
+
+# 1. Chuẩn héa dữ 1igu
+df_st = StandardScalen().fit_transform(df)
+
+# 2. Ap dung PCA
+pca_out = PCA().fit(df_st)
+
+# 3. Xem ti 18 phương sai
+print(pca_out.explained_variance_ratio_)
+[8.93, 0.06, 0.01]
+
+[7.28351154e-@1 2.71648846e-Ø1 4.05993137e-33]
+
+[8.93, 0.06, 0.01]
+
+
+===== image28.png =====
+PGA giữ lại 93% thong tin,
+PC2 chi thém 6%,
+
+PC3 khong dang ké.
+—
+Tớn tắt ý nghĩa lệnh của ban
+
+Thanh phan Ý nghĩa
+
+PCA() Tạo bộ phan tích thành phan chính (Principal Component Analysis).
+
+.fit(df_st) Tim cdc hướng có phương sai lớn nhất trong dir liệu đã chudn hóa.
+
+-explained_variance_ratio_ Cho biét ty 1é phuong sai (mic dO “thong tin”) ma méi thanh n
+Ung dung thường gap:
+
+(dimensionality reduction)
+Vẽ dit liệu nhiều chiều bang 2D (sau khi chon n_component:
+Chọn số đặc trưng tối ưu trước khi huấn luyện mô hình ML
+
+
+
+===== image29.png =====
+# 8.1. Mô hình cay quyét định (decision tree_)
+
+Hô hình _cây quyết định_ là một mô hình được sir dung khá phổ biến va hiệu qua trong cả hai lớp bai toán phan loại va dy báo của hoc có giám sát. Khác với những thuật toán khác trong hoc có.
+giám sát, mô hinh _cây quyết dinh_ không tn tai phương trình dy báo. Moi việc ching ta can thực hiện dé là tim ra một cây quyết định dy báo tốt trén tap huấn luyện va sit dung cay quyết
+h nay dy báo trén tập kiểm tra.
+
+— chia sau thugt todn cay quyét dinh? 8 tra 1di cho céu héi nay, ching ta cing lay vi dy vé 4p dyng mo hinh cay quyét
+cho bai toán phan loại giá nhà trén b dir liệu boston.
+
+markdo
+PAA &
+Bộ dữ liệu được sử dung cho bai toán nay là bộ dif liu về giá nha 6 ở boston bao gdm 13 quan sat va 506 biến.
+Doc dữ liệ
+from sklearn.datasets import fetch_california housing
+data = fetch_california_housing(as_frame=True)
+df = data.frame
+df head()
+1 Pyth
+Medinc HouseAge AveRooms AveBedrms Population AveOccup Latitude Longitude MedHouseVal
+0 83252 41.0 6984127 - 1023810 3220 2555556 3788 - -12223 4526
+1 83014 21.0 6238137 - 0971880 2401.0 2109842 3786 - -12222 3585
+2 72574 520 8288136 - 1073446 4960 2802260 3785 - -12224 3521
+3 56431 520 5.817352 1.073059 5580 2547945 3785-12225 3413
+4 3.8862 520 6281863 1081081 5650 2181467 3785 -12225 3422
+
+
+===== image3.png =====
+EÉ['x'1, #É['ÿ'] La toa độ của từng diém dữ liệu trên đô thi (trục X va Y).
+kmeans.labels_.astype(float) mdi điểm có một nhãn cym (cluster label) tir KHeans.
+Vi dy: [@, 1, 1, 2, 9, ...].
+
+Tham số c quy mau sắc của diém theo g
+
+4 tri dé.
+
+astype(float) chuyển kiểu nhãn sang float để Matplotlib hiểu va tô mau theo số cur
+
+s=5@  Kích thước của các châm (s = size). Giá tri càng lớn thi chdm cang to.
+—
+Ở day là 9.5 ¬ hoi trong suốt dé dễ nhìn các cụm chồng lấn.
+
+plt.scatter(centroids[:, @], centroids[:, 1], c='red', s=50)
+
+Day 1a lệnh vẽ các tâm cum (centroids).
+
+Tham số Giải thich
+centroids[:, @], centroids[:, 1] Là toa độ của các tam cym theo trục X va Y (dang mang numpy 2D).
+‘red’ Tô mau đỏ cho các tâm cum để d& phan biệt.
+
+=50 Kich thước các chấm (tam cum). Có thé chon lớn hon (vd.
+
+=209) dé ndi bat.
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn,cluster import KMeans
+
+data = {
+
+x": [25, 34, 22, 27, 33, 33, 31, 22, 35, 34, 67, 54, 57, 43, 50, 57, 59, 52, 65, 47, 49, 48, 35, 33, 44, 45, 38,
+43, 51, 46],
+
+[79, 51, 53, 78, 59, 74, 73, 57, 69, 75, 51, 32, 40, 47, 53, 36, 35, 58, 59, 58, 25, 20, 14, 12, 20, 5, 29, 27,
+8, 7]
+
+GF = pd.Datarrame(data)
+
+kmeans = KMeans(n_clusters=4). fit (GF)
+centroids = kmeans.cluster_centers_
+print (centroids)
+
+p1t.scatter(BÉ['x'], BÉ['y']„
+plt.scatter(centroids[:, @], centroids[:, 1], c='ned', s=50)
+
+p1t.show()
+[143.2 16.7 1
+[27.75 55. 1
+
+I55.1 46.1 1
+
+
+
+===== image30.png =====
+# 1. Impont thư viện
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+from sklearn.datasets import fetch_california_housing
+rom sklearn,model selection import train_test_split
+rom sklearn.tree import DecisionTreeRegressor, plot_tree
+from sklearn,metrics import mean_squared_error, r2_score
+
+# 2. Tải dữ 1
+data = fetch_california_housing(as_frame=True)
+df = data.frame
+
+print("s dong dau của dữ liệu:”)
+print(df.head(), “\n”)
+
+#
+x
+
+M
+
+3. Chia dữ liệu huấn luyện / kiếm tra
+df.drop(columns=['MedHouseVal']) # các đặc trưng (features)
+df['HedHouseVal ] # biến myc tiêu (target)
+
+X train, X test, y train, y test - train test split(
+X, y, test_size-@.2, nandom state=42
+
+l 4. Khởi tạo va huấn luyện mô hinh cay quyết định
+model = DecisionTreeRegressor(max_depth=5, random_state=42)
+model.fit(X train, y train)
+
+l 5. Dự đoán và đánh giá mô hình
+y_pred = model.predict(x_test)
+
+mse = mean_squared_error(y test, y pred)
+F2 = r2_score(y test, y_pred)
+
+print(f"Mean Squared Error (MSE): {mse:.4F}")
+print(f"R? score: {r2:.4F}\n")
+
+l 6. Trực quan hóa một phan cay quyết định
+plt.figure(figsize=(16, 8))
+plot_tree(
+
+model,
+
+feature_names=X.columns,
+
+filled-True,
+
+rounded=True,
+
+fontsize-8,
+max depth-3 # chi hiển thi 3 tang dau cho dễ doc
+
+
+===== image31.png =====
+plt.title("Decision Tree (California Housing)")
+plt.show()
+
+# = 7. So sánh thực tế vs dy đoán
+compare_df = pd.DataFrame({"Thyc té": y_test.values[:19], “Dy đoán': y_pred[:19]})
+print (compare_df)
+
+5 dong dau của dữ 1igu
+MedInc HouseAge AveRooms AveBedrms Population AveOccup Latitude
+
+9 8.3252 41.0 6.984127 1.023810 322.8 2.555556  37.88 \
+
+1 8.3014 21.0 6.238137 0.971880 2401.6 2.109842 - 37.86
+
+2 7.2574 52.0 8.288136 1.073446 —
+
+3 5.6431 52.@ 5.817352 1.073059 558.0 2.547945 37.85
+
+4 3.8462 52.0 6.281853 1.081081 565.0 2.181467 37.85
+Longitude MedHouseVal
+
+@ = -122.23 4.526
+
+1 122.22 3.585
+
+2 122.24 3.521
+
+3 -122.25 3.413
+
+4 -122.25 3.422
+
+Mean Squared Error (MSE): 0.5245
+R? score: @.5997
+
+
+===== image32.png =====
+fig.canvas.print_figure(bytes_io, **kw)
+
+II Decision Tree (California Housing)
+
+Medinc =
+squared error
+samples
+value
+
+086
+1.337
+16512
+072
+
+Medinc == 3.074
+
+squared error = 0.834|
+13101
+174
+
+AveRooms
+
+samples
+value
+
+squared error
+
+2415
+0.827
+833
+209
+
+AveOccup =
+squared erro
+samples
+value
+
+6268
+1.358
+
+squared _error
+samples
+2954
+
+: UserMarning: Glyph 127795 (\N{DECIDUOUS TREE}) missing from current font.
+
+Medinc
+squared erro
+samples
+
+value
+
+cy
+1216
+
+3411
+
+3345
+
+Medinc == 7.815
+=quared error,
+sample:
+value
+
+2384
+
+Medinc <= 2.215
+squared error = 0.679
+samples = 2624
+Value = 1.626
+
+Medinc <= 2.418
+squared error = 0.387
+samples = 3644
+value = 1.165
+
+Latitude <= 37,935
+squared error = 1.248|
+samples = 1755
+Value = 2.736
+
+Medine <= 4121
+squared error = 0.488
+samples = 5078
+
+value = 1.867 value = 3.518
+
+HouseAge.
+squared error = 0 73
+samples = 400
+value = 3.769
+
+value = 2.636 value = 4577
+
+PL IN NN
+SHS eeeee
+
+
+
+===== image33.png =====
+—
+
+Thực tế
+0.47708
+0.45800
+5.00001
+2.18680
+2.78800
+1.58760
+1.98260
+1.57560
+3.40000
+4.46600
+
+Dy đoán
+1.168573
+1.271581
+3.199582
+2.204763
+1.642797
+2.337900
+1.920621
+1.642797
+2.375496
+4.778789
+
+
+===== image34.png =====
+Giải thích ngắn gon
+
+Bước Ý nghĩa
+
+Import thy viện can thiết (sklearn, pandas, matplotlib).
+Dung fetch_california_housing(as_frame=True) dé lay dit
+Chia dữ liệu thành tap huấn luyện va kiém tra (80% / 20%).
+Tao m6 hinh DecisionTreeRegressor với độ sâu tdi da 1a 5.
+Dy don va đánh giá mô hinh bang MSE va R? score.
+Vẽ cây quyết định bang plot_tree() dé xem các điều kiện chia nhánh.
+
+In bang so sánh gid thực té va gid dy đoán.
+
+thích Code: Bộ dữ 1igu fetch_california_housing
+
+Bộ dit liệu nay gdm 20.640 mẫu (mỗi mẫu là một ving dan cu nhỏ ở California) va 8 đặc trung (features):
+Tên cột Ý nghĩa
+
+MedInc ‘Thu nhập trung vi (median income) của khu dan cu
+
+HouseAge Tuổi trung binh của nha
+
+‘AveRooms  Số phòng trung bình trên mỗi căn
+
+AveBedrms Số phòng ngủ trung bình
+
+Population Dân số
+
+AveOccup - Số người trung bình trên mỗi ho
+
+latitude  Võĩ độ
+Longitude Kinh độ
+MedHouseVal Giá nha trung vi (biến myc tiêu can dy don, don vi là 160.000 USD)
+lÌ kết qua khi huấn luyén m6 hình
+
+Khi chạy:
+
+model = DecisionTreeRegnesson(max_depti
+model.fit(X train, y train)
+
+Hô hình Decision Tree Regressor sẽ hoc các quy tắc chia nhánh dé dy đoán giá nha.
+
+max_depth=5 nghĩa là cay có tối da 5 tang, giúp tránh việc “học qué kỹ” (overfitting).
+
+Hỗi nhánh trong cây tương ứng với một điều kiện như:
+
+“Nếu thu nhập trung vi (MedInc) > 4.2 thi giá nh cao hon,
+
+ngược lai nếu Latitude > 36 thi gid thấp hơn,...”
+
+lÌ Các chi số đánh gid mô hình
+
+Sau khi dự đoán:
+
+y_pred = model.predict(x_test)
+
+ta in ra:
+
+Mean Squared Error (MSE): 0.32
+
+R? score: @.72
+
+$ Giải thích:
+
+Chỉ số Ý nghĩa Tốt khi nào
+
+MSE (Mean Squared Error) Trung binh binh phương sai lệch giữa gid dy don va gid that.
+
+Càng nhỏ > mô hình càng chinh xéc. Gan Ø
+
+R? (R-squared) Ty lệ phương sai dit liệu thật mà mô hinh giải thích được.
+
+- 1. > dy đoán hoàn hảo
+
+- 9 > ngẫu nhiên, không học được gi.
+
+Gan 1.0
+
+IH ER = 0.72 nghĩa 1a mô hình giải thích được 72% biến thiên của gid nha, khá tốt với mot cay don giản (depth=5).
+EH Biếu do cay quyết định (Decision Tree)
+
+dang DataFrame.
+
+Qvaonaune
+
+„ random_state=42)
+
+
+
+===== image35.png =====
+Doan
+plot_tree(model, feature_names-X.columns, filled-True, max_depth=3)
+
+Hiển thi các nứt (nodes), mỗi nứt có:
+
+feature > đặc trưng ding để chia (vd: MedInc < 4.3)
+
+samples > số lugng miu tai nat 46
+
+value > gid nha trung binh (đã dy don tai nit 46)
+
+mse > sai số trung binh binh phương tai nit 46
+
+mau nên (xanh - giá thấp, vàng - gid cao)
+
+Vi du:
+
+Hột nhánh trên cay có thé doc như sau:
+
+Nếu HedInc < 4.2 va Latitude > 36.7
+
+thi gid nha trung binh = 1.5 (= 15@.000 USD).
+
+Ngược lại, nếu MedInc > 4.2 > gid trung binh ~ 4.5 (= 45@.000 USD).
+
+> Như vay, mô hinh hoc được quy tắc “thu nhập cao > gid nhà cao” rat rõ rang.
+Bl So sánh giá thực tế va dy đoán
+Kết qua in ra:
+
+compare_df = pd.DataFrame({'Thực tế
+print(compare_df)
+
+y_test.values[:16], ‘Dy đoán': y pred[:10]})
+
+Vi dụ:
+Thực tế Dự đoán
+2.45 2.68
+415 4.33
+1.28 1.34
+3.85 3.56
+
+Sai s6 timg dong nhé » m6 hinh dy doén tuong d6i gan véi thyc té.
+
+Hột số diém lệch do mô hãnh bi rang buộc bởi max_depth=5 > chưa đủ chi tiết dé bat hết xu hướng.
+
+Tổng kết ý nghĩa
+
+Thành phần Ý nghĩa
+
+DecisionTreeRegressor(max_depth=5) Xây dựng mô hình dy đoán giá nha bang cay quyết định, sau tối da 5 tang
+MSE Sai sé trung binh binh phương giữa dy đoán va thực té
+
+9.7+ MO hình giải thích dugc khoang 70-75% biến thiên cua gid nha
+
+-
+Biểu dd cây Hiến thi các điều kiện chia va giá tri trung binh tai nỗi nhánh
+Bang so sánh  Cho thay mô hình dy đoán khá sát voi dữ liệu that
+
+
+
+===== image36.png =====
+from sklearn.datasets import fetch_california_housing
+rom sklearn,model selection import train_test_split
+rom sklearn.tree import DecisionTreeRegressor
+
+from sklearn,metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+
+# MM Tải dữ liệu
+data = fetch_california_housing(as_frame=True)
+X = data.data
+
+= data.target
+
+# N Chia dữ liệu train/test
+X train, X test, y train, y test - train test split(X, y, test_size-@.2, random_state=42)
+
+# MB Huan luyện cay quyết định
+model = DecisionTreeRegressor(max_depth=6, random_state-42)
+model.fit(X train, y train)
+
+# MB Dự đoán
+y_pred = model.predict(x_test)
+
+# NE Đánh giá
+print("R2 Score:", r2_score(y test, y pred))
+print("RMSE:", meøn-squared-enror(y test, y pred, squared=False))
+
+# IM Vẽ bigu dO so sánh gid that va giá dy đoán
+p1t.figune(figsize=(6,6))
+plt-scatter(y test, y pred, alpha=Ð.5, color=
+plt.plot([y test.min(), y_test.max()],
+[y_test.min(), y test.max()],
+ˆr--', Iwe2, label-'Đường y = x (dy đoán hoàn hảo) ')
+p1t.xlabel("Giá that (y_test)')
+p1E.ylabel('Giá dy đoán (y_pred)')
+plt.title('Biểu đô quan
+p1t.1egend()
+p1t.show()
+
+blue’, label="Dir liệu dy đoán')
+
+that va giá dy đoán')
+
+R2 Score: @.6205125146233951
+RMSE: @.7051835278617654
+
+
+===== image37.png =====
+R2 Score: @.6205125146233951
+RMSE: @.7051835278617654
+
+Biểu đồ quan hé giữa gid that va gid du đoán
+
+® Dữ liệu dy đoán
+Đường y = x (dự đoán hoàn hảo)
+
+Giá thật (y_test)
+
+% Generate ‡ Code ++ Markdown
+
+pltscatter(y_test, y_pred, ..): vé cdc điểm dif liệu that va dự đoán. plt.plot([y_testmino, y_testmax(J, [y_testmind, y_testmax0], '
+đỏ ¬ mô hình dự đoán càng chính xác.
+
+vẽ đường chéo lý tưởng (giá dự đoán = giá thật). Điểm càng gần đường
+
+
+
+===== image38.png =====
+from sklearn.datasets import fetch_california housing
+rom sklearn,model selection import train_test_split
+rom sklearn.tree import DecisionTreeRegressor
+
+from sklearn,metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+
+import pandas as pd
+
+import numpy as np
+
+# NH tai dữ 1
+
+u
+
+data = fetch_california_housing(as_frame=True)
+X = data.data
+y = data.target
+
+# MM chia train/test
+X train, X test, y train, y test = train test split(X, y, test_size-@.2, random_state=42)
+
+# MB Huấn luyện mô hình cay quyết định
+model = DecisionTreeRegressor(max_depth=6, random_state-42)
+model.fit(X train, y train)
+
+# MB Dự đoán
+y_pred = model.predict(x_test)
+
+# N Đánh giá mô hình
+print("R? scone:", r2_score(y test, y_pned))
+print("RMSE:", meøn-squared-enror(y test, y pred, squared=False))
+
+# MM Biếu do: Giá that vs Giá dy đoán
+
+p1t.figune(figsize=(6,6))
+
+plt.scatter(y test, y pred, alpha-0.5, color
+
+plt.plot([y test.min(), y_test.max()],
+[y_test.min(), y test.max()],
+ˆr--', Iwe2, label-'Đường y = x (dy đoán hoàn hảo) ')
+
+p1t.xlabel("Giá that (y_test)')
+
+plt.ylabel("Gié dy đoán (y_pred)')
+
+p1t.title('Quan hệ giữa gid that va gid dy đoán')
+
+p1t.1egend()
+
+p1t.show()
+
+blue’, 1abel-'Giá dy đoán')
+
+# MM Biếu dO: Độ quan trong cia các đặc trưng
+
+importances = model.feature_importances_
+
+feature_names = X.columns
+
+feat_importances = pd.Series(importances, index=feature_names)
+feat_importances = feat_impontances.sont_values(ascending=True)
+
+plt. figure(figsize=(8,6))
+'feat_importances.p1ot (kin
+
+banh', color="green")
+
+
+===== image39.png =====
+plt. figure(figsize=(8,6))
+'feat_importances.p1ot (kind
+plt.title( ‘mic độ quan tro
+plt.xlabel(
+p1t.ylabel(
+p1t.show()
+
+R? score: @.6205125146233951
+RMSE: @.7051835278617654
+
+Quan hệ giữa gia that va gia dự doan
+
+5
+=
+5
+
+® Gid dự đoán
+Đường y = x (du đoán hoàn hao)
+
+Giá thật (y_test)
+
+
+
+===== image4.png =====
+
+
+===== image40.png =====
+Mức độ quan trong của các đặc trung trong mô hinh cay quyết định
+
+Medinc
+AveOccup
+HouseAge
+AveRooms
+
+Latitude
+
+s
+2
+a
+
+Longitude
+
+Population
+
+AveBedrms
+
+Giá trị quan trọng (Feature Importance)
+
+Thanh phn Ý nghĩa feature importances_ Mức độ đóng góp cia từng biến dau vào (feature) đến quyết định cuối cing. Cột quan trong nhất La cột ma mô hình thường ding dé chia nhánh ở mức cao của
+cây (vi du: Medlnc — thu nhập trung vj). Cột ít quan trong hon La các biến ít anh hưởng đến giá nha, mô hình hiếm khi ding dé chia nhánh. Biểu dé thanh ngang Cho thay feature nao mô hình “tin tưởng”
+
+nhất khi dự đoán.
+
+
+===== image41.png =====
+from sklearn.datasets import fetch_california_housing
+rom sklearn,model selection import train_test_split
+rom sklearn.tree import DecisionTreeRegressor, plot_tree
+from sklearn,metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
+
+import pandas as pd
+
+# MM Tải dữ liệu
+data = fetch_california_housing(as_frame=True)
+
+X = data.data
+y = data.target
+# EH chia train/test
+
+X train, X test, y train, y test - train test split(X, y, test_size-@.2, random_state=42)
+
+# MB Huấn luyện mô hình cay quyết định
+model = DecisionTreeRegressor(max_depth=3, random state-42) # Giảm độ sâu dé dễ quan sát
+model.fit(X train, y train)
+
+# MM Dự đoán va đánh giá
+
+y_pred = model.predict(x_test)
+
+print("R? Score:", r2_score(y test, y pred))
+
+print("RHSE:", mean-squered-errer(y test, y pred, squared=False))
+
+# MM Biếu do: Giá that vs Giá dy đoán
+
+p1t.figune(figsize=(6,6))
+
+plt.scatter(y test, y pred, alpha-0.5, color
+
+plt.plot([y test.min(), y_test.max()],
+[y_test.min(), y test.max()],
+r--', lw=2, label="pudng y = x (hoàn hdo)")
+
+plt.xlabel( "Gi that (y_test)')
+
+plt.ylabel("Gié dy đoán (y_pred)')
+
+plt.title('So sánh giá that va gid dy đoán')
+
+p1t.1egend()
+
+p1t.show()
+
+blue’, 1abel-'Giá dy đoán')
+
+# IM Biểu do: Độ quan trong c°^-25--x==2
+importances = model.featune i (variable) importances:
+feat_importances = pd.Series(importances, index-X.columns).sort_values()
+plt.figure(Figsize=(8,6))
+
+eat_importances plot (kind="barh’, colon-'green')
+
+p1t.title('Độ quan trong của các đặc trưng')
+
+p1t.x1abel( 'Feature importance")
+
+plt.show()
+
+ndanray[Any, dtype[floating[_64Bit]]]
+
+
+
+===== image42.png =====
+B vẽ ca định
+
+p1t.figune(figsize=(20,16))
+
+plot_tree(
+model,
+feature_names=X.columns,
+filled=True
+rounde
+fontsiz‹
+proportion=
+)
+plt.title( đị )
+p1t.show()
+R? Score: @.5097629887358219
+RMSE: @.8@15054466605727
+
+s
+>
+ã
+Š
+
+So sánh giá thật và giá dự đoán
+
+® - Giá dự đoán
+== Đường y = x (hoàn hao)
+
+OO @- @OO 1907000 q96ooÐ
+
+
+
+===== image43.png =====
+Độ quan trong của các đặc trưng
+
+AveRooms i
+
+Longitude
+
+Latitude
+
+Population
+
+AveBedrms
+
+HouseAge
+
+0.0 : › . 04 05
+Feature importance
+
+
+
+===== image44.png =====
+‘AveRooms <
+squared error =
+samples
+
+Medinc <= 3.074
+squared_error = 0.834
+samples = 79.3%
+value = 1.74
+
+cay quyết định (Decision Tree)
+
+Medinc <= 5.086
+squared_error = 1.337
+samples = 100.0%
+value 072
+
+‘Aveoccup <= 2.418
+squared_error = 0.827
+samples = 41.4%
+
+squared error = 0.679] Ísquared erro
+samples = 15: samples
+
+[squared error =1248]  squared error = 0.488
+‘sampies = 10.6% samples = 30.8%
+value = 2.736 value = 1.867
+
+
+
+===== image45.png =====
+Giải thich ý nghĩa biểu đồ cây: Mỗi nút (node) là một phép chia dif liệu theo một thuộc tinh, vi di
+nút 46 (don vi: 100.000 USD). samples = .. là ty lệ (hoặc số lượng) mau trong nit. color biểu di
+
+ledinc <= 4.4 nghĩa là chia dif liệu dựa vao thu nhập trung
+giá trị dau ra — ving có mau tương ty nhau thi gid nha dy d
+
+.4. value = ... là gid nha trung bình trong
+gan nhau.
+
+Bộ dữ liệu Nha ở Boston bao gdm théng tin về nha 6 trong khu vực Boston, Massachusetts. Nó có khoảng 506 hang va 14 cột dữ liệu.
+Một sé biến trong tap dữ liệu bao gồm:
+
+TOI PHAM - Ty lệ tội phạm bình quan dau người theo thi tran. ZN - Ty lệ dat ở được quy hoạch cho các lô trên 25.000 bộ vuông. INDUS - Ty lệ mau dat kinh doanh phi ban lẻ trên mdi thi tran. CHAS - Biến
+gid sông Charles (= 1 nếu đường giáp sông; 0 néu ngược lai). NOX - Nong độ oxit nitric (phan trên 10 triệu). RM - Số phòng trung bình trén một căn nha. TUỔI - Ty lệ các don vi sé hữu chủ sé hữu được xây.
+dung trước nam 1940. DIS - Khoảng cách có trong số đến nam trung tam việc lam ở Boston. RAD - Chi số kha nang tiếp cận các đường cao tốc xuyên tam. THUẾ - Thuế suất bat động san toan gid tri cho
+mỗi $10.000. PTRATIO - Ty lệ hoc sinh-giáo viên theo thi tran. B - 1000(Bk - 0,63)^2 trong đó -Bk la ty lệ người da den theo thi trấn. LSTAT - Ty lệ phan tram dia vi thấp han của dan số. MEDV - Giá tri trung
+bình của những ngôi nhà do chủ sở hữu cư ngụ tính bằng $1000.
+
+Ban có thé tai tap dữ liệu Nha ở Boston trực tiếp tir scikit-learning bang cach sử dung ham load_boston tit mô-đun sklearn.datasets.
+from sklearn.datasets import load_boston # Load the Boston Housing dataset boston = load_boston() # Print the dataset description print(boston.describe())
+
+Ma dé tai tập dữ liệu Nha ở Boston bang skleam. Lay ra từ https://scikit-learn.org/0.15/modules/generated/sklearn.datasets.load_boston.html ngày 29/3/2023.
+
+Ý nghĩa của những trường dữ liệu:
+Cc biến dau vao:
+
+* crim: Ty lệ phạm tội phạm bình quan dau người theo thi tran.
+* zn: Tỷ lệ dat 6 được quy hoạch cho các lô trén 25.000 foot square.
+. ÿ lệ diện tích thuộc lĩnh vực kinh doanh phi bán lẻ trên mỗi thi tran.
+. 1 nếu được bao bởi sông Charles River, = 0 nếu ngược lại.
+* nox ‘Nong độ khí Ni-tơ oxit.
+
+* mm: Trung bình số phòng trên mot can hộ.
+
+* age: Ty lệ can hộ được xây dựng trước nam 1940.
+
+dis: Khoảng cách trung binh có trong số tới 5 trung tam việc lam lớn nhất ở Boston.
+rad: Chỉ số về khả năng tiếp cận đường cao tốc.
+
+tax Gia tri thué suất tinh trén don vi 10000$.
+
+ptratio: Ty lệ hoc sinh-giáo viên trên mỗi thi tran.
+
+black Ty lệ s6 người da den trong thi trấn được tinh theo công thifc: 1000(Bk-0.63)2 ở day Bk là ty lệ người da den trong thi tran.
+Istat: Ty lệ phần tram dan số thu nhập thấp.
+
+Biến mục tiêu: Can cứ vào gid nha 6 > 20 nghin USD hoặc nhé han ma chúng ta phan thành nhãn 1 (giá cao) va nhãn 0 (gid thấp).
+
+Tiếp theo ta sé xây dung mét mô hình phan loại dy trén cay quyét dinh với độ sâu tối da la 3. DO sâu ở day chính là số lượng tối da cdc câu hỏi khi di từ node gốc tới node Id. Chúng ta khai bao dé sâu
+thông qua đối số max depth.
+
+
+===== image46.png =====
+Cách dự báo từ cây quyét định?
+
+Từ cây quyết dinh ở trên, dựa trên việc rẽ nhánh, chúng ta suy ra được nhãn dy báo cho các quan sat. Giả sử quan sát dau vào có gid tri: LSTAT = 10, RM = 6, DIS = 3. Khi do xuất phat từ node gốc
+tuần tự đặt và trả lời các câu hỏi:
+
+* LSTAT <= 14.115 la đúng, như vay tai node gốc ta rẽ sang nhánh True bên trái.
+* Tiếp theo ta lai xét tiếp câu hoi RM <= 6.034, kết qua tra về là True. Do dé ta lai ré sang nhánh bên t
+© Tiếp theo xét tiếp câu hỏi DIS <= 4.714, két qua trả ve tiếp tục là True. Do dé ta ré sang bén trái va thu được két qua dự báo 6 node Id là nhãn high.
+
+ể minh chứng cho nhận định trên, ta sé thử nghiém dự báo cho 5 quan sát sao cho gid tri LSTAT = 40, RM = 6, DIS = 3 là cố định va những giá tri khác thay đổi ngẫu nhiên va kiểm tra kết qua du
+báo.
+
+secant peti 2 Gl
+
+# LSTAT = 10, RM = 6, DIS = 3, các gid tri khác có thé thay đối tuỳ ý
+
+for i in range(5):
+CRIM = np.random.randint(@, 160)
+INDUS = np.random.randint(@, 16@)
+ZN = np.random.randint(@, 100)
+CHAS = np.random.randint(@, 160)
+NOX = np.random.randint(@, 100)
+AGE = np.random.randint(@, 10@)
+RAD = np.random.randint(@, 100)
+TAX = np.random.randint(@, 10@)
+PTRATIO = np.random.randint(@, 160)
+B = np.random.randint(@, 160)
+
+x = pd.DataFrame({'CRIM':CRIM, 'ZN':ZN, 'INDUS':INDUS, 'CHAS':CHAS, 'NOX`:NOX, 'RN':[6], 'AGE':AGE, 'DIS':[3], 'RAD':RAD, 'TAX':TAX, 'PTRATIO":PTRATIO, 'B':B, 'LSTAT':[18]})
+y_pred = tree_clf.predict_proba(x)[@]
+
+print(‘probability low {}, high {}'.format(y_pred[9], y_pred[1]))
+
+print('predicted label {}'.format(tree_clf.predict(x)[9]))
+
+
+
+===== image47.png =====
+Chúng ta thay dù có thay đã
+phân đã tuân theo qui
+
+các giá trị khác như thế nà
+nhánh in đậm như bên dư
+
+.034
+gini = 0.272
+samples = 321
+value = [52, 269]
+class = high
+
+DIS <= 4.714
+gini = 0.497
+samples = 78
+value = [36, 42]
+class = high
+
+LSTAT <= 11.815
+gini = 0.123
+samples = 243.
+value = [16, 227]
+class = high
+
+|
+
+samples = 506
+value = [215, 291]
+class = hi
+
+3 thoa mãn thi chúng ta đều thu được dy bao có nhãn là 1. Điều nay cho thay dy bao tir
+
+AGE <= 94.55
+gini = 0.491
+samples = 23
+value = [10, 13]
+class = high
+
+gini = 0.435
+samples = 50
+value = [16, 34]
+class = high
+
+gini = 0.408
+samples = 28
+value = [20, 8]
+
+class = low
+
+0.045,
+samples = 216
+5, 211]
+class = high
+
+gini
+
+value
+
+gini =
+samples = 27
+value =
+class = high
+
+0.483 gini
+
+[11, 16]
+
+0.401
+samples = 18
+
+value
+class = high
+
+5, 13] value = [0, 2]
+
+class = high
+
+
+
+===== image48.png =====
+8.3. Đường bién phan chia cua cay quyết định
+
+Đường bién phan chia của cây quyết dinh sé dựa trén kich ban rẽ nhánh ma chúng ta lựa chon. Gia định chúng ta di từ node (LSTAT <= 14.115) ==> (RM <= 6.034) ==> (DIS <= 4.714). Khi do
+dung bién phan chia là những đường thang trong hinh bén dưới di qua ngưỡng threshold.
+
+
+===== image49.png =====
+RM
+
+O ỂL.F_ 6.034
+
+x
+s K * x
+
+9 Ø
+
+xz 44 MS
+
+
+
+===== image5.png =====
+import numpy as np
+import pandas as pd
+
+import matplotlib.pyplot as plt
+from sklearn,cluster import KMeans
+
+# MM Tạo dữ liệu gia (ngẫu nhiên, gdm 3 cum)
+np.nandon.seed(42)
+
+x1 = np.random.normal(2, @.
+y1 = np.random.normal(2, @.
+
+„ 59)
+„ 59)
+
+x2 = np.random.normal(6, @.
+np.random.normal(6, @.
+
+„ 59)
+„ 59)
+
+x3 = np.random.normal(19, 0.5, 50)
+y3 = np.random.normal(2, @.5, 58)
+
+# Gộp dir liệu thanh DataFrame
+—,
+ˆy': np.concatenate([y1, y2, y3])})
+
+# Ap dung KHeans
+
+kmeans = KMeans(n_clusters=:
+kmeans fit (dF)
+
+centroids = kmeans.cluster_centers_
+
+„ random_state=42)
+
+# VE biểu dd
+p1t.figune(figsize=(8,6))
+
+# Các điểm dit liệu - mau theo cụm
+p1t.scatter(df['x'], df['y']„
+kmeans.labels_.astype(float),
+=50, alpha-0.5)
+
+# Các tâm cum - mau dd
+plt.scatter(centroids[:, @], centroids[:, 1],
+c='red’, s=200, marker="X")
+
+plt.title("Phan cym K-Means (minh hga)")
+plt.xlabel ("x")
+
+p1t.ylabel("Y")
+
+p1t.gnid(True)
+
+p1t.show()
+
+
+===== image50.png =====
+*  Bước 1: Đường thang z = 14.115 sé phan mat phẳng thành 2 phan là z < 14.115 va œ > 14.115. Theo phương án rẽ nhánh tai node gốc tương ting với biến LSTAT, chúng ta lựa chon nửa mat
+phẳng z < 14.115 nam bên trái dé dy báo nhãn.
+
+*  Bước 2: Đối với nửa mat phẳng z < 14.115 chúng ta lai xét tiếp trục y tương ting với biến |RM. Đường thang y = 6.034 sé tiếp tục chia nửa mat phẳng nay thành hai phn là y > 6.034 va
+6.034. Theo kịch ban chúng ta sé lựa chon hình chữ nhật bi giới han bởi a > 14.115 va y > 6.034. Luc nay cây quyết định van chưa kết thúc. Do mô hinh có độ sâu là 3 nên chúng ta phải tiếp tục
+phan chia tiép theo threshold của biến DIS.
+
+<
+
+* Đường thang z = 4.714 sé tiếp tục phan chia hình chữ nhật thu được 6 bước 2 thanh hai hình chữ nhat con. Ta chi lấy hinh chữ nhat nam bên trái. Đó chính là hinh chữ nhật bi giới han bởi các cạnh
+in dam.
+
+Ching ta dé y thay rang moi điểm nằm trong hinh chữ nhật có các canh in dam sé cling được dy báo thuộc về nhóm [high hinh tròn như hinh vẽ. Các cạnh in dam của hinh chữ nhật chinh là đường biên
+phan chia cia cây quyết định. Đối với những điểm nằm ngoài hinh chữ nhật nay thi có thé lẫn cả nhãn hãgh va nhãn 1ow va chúng ta cần những kich ban rẽ nhánh khác dé dy bdo nhãn cho chúng.
+
+Nhu vay đường biên phân chia của cây quyết dinh la khá don giản va trực quan. Chúng ta không căn giải bai toán tối ưu như SVM hay Logistic dé tim ra được đường biên phan chia nay ma don thuần
+chúng chi la u phẳng di qua một ngưỡng threshold cố dinh. Những mô hinh có đường bién phan chia có thé giải thich được như vay được gọi là white box models. Trai lai, trong machine learning
+tồn tai những mô hinh ma chúng ta không thé giải thích dugc vi sao mô hinh lai dua ra quyết dinh nhu vay. Chang han nhu trong mang nơ ron, mé hình có thé dé dang dự báo một bức anh là chó hay mèc
+nhưng ta không thé nói được vi sao mô hình lai dy báo dé là chó hoặc mèo. Kết qua dự bao can cứ vào bao nhiéu phn tram quyết dinh được đưa ra dựa trén các đặc trưng như lông, đuôi, mat, mai, miệng
+của chúng? Những mô hình như vay được goi la black box models.
+
+8.4. Cách khởi tạo cây quyết định
+
+Để tra Idi cho câu hỏi một cây quyết định được tao ra như thé nao? Chúng ta cần biết được thứ ty câu hỏi [a gi va cách dat câu hỏi như thé nao?
+Thứ tự lựa chọn câu hỏi
+
+Đối với những bộ dữ liệu có số lượng biến dau vào d lớn, việc lựa chon biến nao sé được dat ở node gốc la điều không dé dang. Một kich ban lựa chon ngẫu nhiên chi có xác suất đúng la 3 va dường như
+kha nang chúng ta chon sai là rat cao. Do đó chúng ta cần phải có một tiêu chi nào đó dé Iya chon biến phù hợp. Xuất phat từ yêu cầu nay, chúng ta hình thành nên các độ do như entropy, Gini do lường
+mức độ tinh khiến (purity) va van duc (impurity) của một biến ma ta sé tim hiểu bên dưới.
+
+
+
+===== image51.png =====
+8.4.1. Tinh khiét va van duc
+
+định chúng ta dang xây dung
+qua thống kê tai node ló lần lượt là:
+
+cay quyết định ma tai mot node quyết định chúng ta có 50 quan sat rai vào chúng. Có ba phương án lựa chon node lá tiếp theo tương ting với 3 biến, chúng có kết
+
+* Bién 1: 25 nhãn 1, 25 nhãn 0.
+* Biến 2: 20 nhãn 1, 30 nhãn 0.
+s Biến 3: 0 nhãn 1, 50 nhãn 0.
+
+Theo ban dau sé la biến phù hợp nhất được Iya chon tai node Id?
+Kich ban lựa chon biến 1 dường như là vô nghĩa vi nó tương đương với dy báo ngẫu nhién nhãn 0 va 1.
+Kịch ban tương ting với biến 2 có xu hướng dự báo thiên về nhãn 0 nhưng ty lệ dy báo sai nhãn 1 vẫn còn cao.
+
+Lựa chọn biến 3 là tuyệt vời vì chúng ta đã dự báo đúng hoàn toàn nhãn 0.
+
+Nhu vậy mục tiêu của chúng ta khi đối diện với vic phan loại dé là kết qua trả về tai node lá chi thuộc về một lớp. Chúng ta sit dung một thuật ngữ ngắn gon dé gọi tên trường hợp nay là tinh khiét
+(purity). Trái ngược lai với tinh khiết sé là khái niệm vấn duc (impurity), tức phan phối của các nhãn tai node lá con khá map mờ, không có xu hướng thiên về mot nhãn nào cy thé. Nếu ra quyết định phan
+loại dựa trên kịch ban dẫn tdi node lá sé tra về kết qua không dang tin cay.
+
+8.4.2. Thước do cho mức dé tinh khiết (purity)
+
+Entropy là một khái niém khoa hoc được sit dung lần dau tién trong nhiệt động lực hoc va sau đó được phổ biến trong các lĩnh vực khác như vat ly, hod học, y sinh, lý thuyết thông tin,... Trong nhiét động
+lực hoc thi Entropy là một đặc tinh vat lý có thé do lường được có sự liên kết với trang thai hỗn loan (disorder) hoặc không chắc chan (uncertainty).
+
+Trong thuật toán cây quyết định chúng ta sé sử dung Entropy dé đánh gid mức dé tinh khiết của phan phối xác suất của một sự kiệ
+
+Gia sit một su kiện xảy ra với phan phối xác suất ld p = (pi,», ‹ - - ›Ðơ) thoả man 32 , p; = 1. Khi đó ham entropy đối với sự kiện trên là:
+
+Cc
+H(p) = - > pilog ni a
+
+Trong trường hợp p; = 0 thi ham entropy là không xác định do log p; không ton tai, tuy nhiên can cứ vào giá tri hội tu thi chúng ta sé qui ước gid tri của entropy trong trường hợp nay là 0.
+
+Trong ly thuyết thông tin thi ham log 6 phương trình (1) là ham logarith với co số 2. Tuy nhién ở day chúng ta có thé sử dung ham logarith cơ số tự nhién e ma không thay đổi ban chat do gid tri dat được
+tương đương với việc nhân với một hang 6.
+
+
+===== image52.png =====
+Trong trường hợp p; = 0 thi ham entropy là không xác định do log p; không ton tai, tuy nhiên can cứ vào giá tri hội tu thi chúng ta sé qui ước gid tri của entropy trong trường hợp nay là 0.
+
+Trong ly thuyết thông tin thi ham log ở phương trình (1) [a ham logarith với co số 2. Tuy nhiên ở day chúng ta có thé sử dung ham logarith co số tự nhién e ma không thay đổi ban chat do giá tri dat được
+tương đương với việc nhân với một hang số.
+
+trị tối đa đạt được khi phân phối xác suất là đồng đều trên toàn bộ các nhãn. Để đơn giản bên dưới chúng ta vẽ đồ thị và khảo
+
+Khảo sát ham entropy chúng ta sé nhận thay day là mot ham không âm có
+st ham entropy đối với bai toán phan loại nhị phan.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Tinh entropy theo p
+def _entropy(p):
+return -(p*np.log(p)+(1-p)*np.log((1-p)))
+
+# Khởi tạo gia tri yhat tir 9 đến 1
+p = np.linspace(0.091, @.999, 200)
+
+# Ham visualize cross entropy
+def _plot_crs(p):
+entropy = _entropy(p)
+plt-figure(Figsize = (12, 8))
+plt.plot(p, entropy)
+p1t.x1abel('p')
+plt.ylabel(’ entropy")
+p1t.title('Entropy')
+plt.show()
+
+_plot_crs(p)
+Python
+
+
+===== image53.png =====
+i lớn nhất dat được khi pp = pi = ‡- Trong khi giá tri nhỏ nhat dat được khi một trong hai xác suất bang 1 va xác suất còn lai bang 0.
+Bén dưới là lời giải cho bai toán cực tri entropy cho ban nao thực su quan tam
+Ta dé dang tim được cực tri H(p). That vay, vi 1 > p; > 0 nén gid tri H(p) > 0 là hiển nhiên. Bang thức xảy ra khi tồn tai một gid tri p; = 1 va các gid tri còn lại bang 0.
+
+Để tim cực dai chúng ta xét ham f(a) = —z log «. Ham nay có dao ham bac 2 là ƒ“(z) = =! < 0 nên là một ham lỡm trén khoảng (0, 1]. Ap dung bat dang thức Jensen ta có:
+
+354
+
+C 1 1, 1
+H(p) = >> f(r) < oF =) = CF(&) = Cl-F log G] = logƠ
+( > ĩ 8 8 G 8 Gl = le
+
+Dang thức xảy ra khi pp = pi = --- = po = ở-
+
+Kết luận gid tri entropy cực tiéu dat được khi phan phối p là tinh khiét nhat, tức phan phối hoàn toan thuộc về một nhóm. Trái lai, entropy cực dai dat được khi toàn bộ xác suat thudc về cdc nhóm là bang
+nhau. Một phan phối có entropy càng cao thi mức độ tinh khiét của phan phối đó sé càng thấp va ngược lai.
+
+Như vay về ban chat thi entropy la một thước do về dé tinh khiết cia phan phối xác suất. Dua trên entropy chúng ta có thé đánh gid tinh hiệu qua của cu hỏi ở mỗi node va quyết dinh xem dau là cau hỏi
+hiệu qua hơn (có độ tinh khiét lớn han, entropy nhỏ han). Tiếp theo chúng ta sé cing tim hiểu giải thuật tim kiém tham lam (greedy) theo chiều từ trên xuống dé xây dung nén cây quyết dinh dựa trén ham
+entropy.
+
+8.4.3. Tim kiếm tham lam va truy hồi
+
+Gia sử số lượng bién của ban là r rat lớn. Ban muốn tao ra một cây nhi phan với độ sâu tối da là d. Số kha năng lựa chon d biến (có xét đến tinh thứ ty) từ m biến dé tao thành mét cay nhị phan là chỉnh
+hop Ad = rq n - Khi d lớn thi day là một con số rat lớn. Do dé rat khó để chúng ta tim được đúng cây nhị phan tối wu ngay chi trong một lan. Thay vào đó, một chin lược hợp lý va khôn ngoan hon là di
+từng bước nhỏ va tim cach Iya chon cau hỏi tối uu ở mỗi node. Chiến lược như vay được gọi Ia tim kiếm tham lam.
+
+Ngoài ra qué trình Iya d
+thuật toán, để hạn chế
+phần bên dưới).
+
+nay sé tiếp diễn một cách truy hồi (recursive) theo chiều từ trên xuống dưới cho đến khi dat ngưỡng về độ sâu hoặc node cuối cling hoàn toàn thuộc về một nhóm. Ở một số
+tượng quá khớp chúng ta có thé dừng phan chia nếu cham ngưỡng số lượng quan sat tối thiểu ở node lá hoặc giới han về độ sâu cia nhánh (chúng ta sé lam rõ hon điều nay ở
+
+Cách xây dựng cay quyết định theo phương pháp tim kiếm tham lam va truy hồi dựa trên thuật toán ID3 ma ta sé tim hiểu bên dưới.
+
+
+===== image54.png =====
+8.5. Thuat toan ID3 va CART
+
+Thuật toán ID3 (viết tat của iterative Dichotomiser 3) là một giải thuật khá lau đời được tao ra bởi Ress Quinlan nhằm xây dựng cay quyết dinh phù hợp từ một bộ dữ liệu. Day [a giải thuật tiền đề ma dy
+trên co sé đó, rat nhiều những giải thuật khác lin quan tới cây quyết định được kế thừa va phd triển:
+
+* CAS: Kế thừa cia thuật toán ID3. Giải thuật nay được sit dung phổ biến trong machine learning va xử ly ngôn ngữ tự nhiên.
+
+* CART: Viết tat của cum tif Classification And Regression Tree. Ưu điểm của né la có thé sử dung cho ca bai toán phan loại va hồi qui.
+* CHAID: Sử dung phan phối x? dé ty động tương tác phat hiện phan chia khi tinh toán cây phan loại.
+
++ MARS: Ap dung hồi qui da biến theo splines. Bay là một phương pháp hồi qui chia dé tri, có thé loại bỏ anh hưởng của outliers.
+
+Trong khuôn khé bai viết nay chúng ta sé tim hiéu về thuật toán CART. Bay là thuật toán được str dung phổ biến nhất trong machine learning va có thé được sử dung trong cả hai bai todn phan loại va hồi
+qui.
+
+8.5.1. Trường hợp cay nhi phan với bién liên tục
+
+Giả dinh chúng ta dang đứng 6 node lá bat ky, các quan sat tai node nay là tap S có kich thước |S| = N. Tai node lá nay thi mức d6 tinh khiết được đánh giá théng qua ham entropy được tinh theo công
+thức
+
+L
+H(S) = =>p:log(p;)
+
+i=
+
+Trong dé p; là ty lệ phần tram các quán sát thuộc về nhãn . Luu ý nhãn dy báo tai node lá tring với nhãn ma có ty lệ lớn nhat.
+
+Trong thuật toán CART, ham mat mót được định nghĩa là tổng có trong số của entropy trên toàn bộ các node ló. Trong số ở day được lay theo ty lệ phan tram quan sat trên từng node ló. Điều dé có nghĩa
+rng với những node lú có số lượng quan sát lớn thi anh hưởng của nó lên ham mat mat là lớn han so với những node lớ có số lượng quan sát nhỏ. Nhận định nay là hợp lý vi việc phan loại sai những nod
+lá lớn gay hu quả nghiêm trong hon so với phan loại sai node nhỏ. Dé tối thiểu hod hàm mat mat thi chúng ta phải lựa chon bién va ngưỡng sao cho tổng gid tri của ham mat mat la nhỏ nhất.
+
+Tai node hiện tai, một câu hỏi dat ra là liệu tiếp tục phân chia thi có tốt hon không? Tốt hon được thé hién thông qua gid tri entropy phải giảm nhiều nhất. Nếu tốt hơn thi chúng ta phải Iva chon biến nac
+tiếp theo? nếu Ia biến liên tục thi Iya chon ngưỡng phan chia như thé nao?
+
+Luu ý trong thuật toán ID3 thi chúng ta chi 4p dung trén các biến phan loại (category). Thuật toán CART cho phép ta tuning threshold dé biến đổi biến lién tục sang các dac trưng (features). Chang han biế
+được lựa chon là 24) có ngưỡng phan chia là ¢ thi hai đặc trưng tương ting la) > # và zÚ) < ¢. Ngưỡng £ giúp phan loại tap S thanh hai tập con tương ting là:
+
+So = (xi|s9 < t,x: € S}
+5, = {x:lal) > t,x; € 5}
+
+
+===== image55.png =====
+Trong đó x; € R™ là quan sát thứ ä của tap S. Quan sát nay bao gdm m chiều tương ứng với số lượng bién dau vào. 22!) là quan sát thứ é của biến 2). Giả sử No = |So| va Ni = [Si]. Do hai tập con
+S1, Sp là không giao nhau nên N = No + Mi.
+
+Lam sao dé Iva chon được ngưỡng t tốt nhất?
+
+Kich ban phan chia trên giúp tao thành hai node lá. Mức độ tinh khiết sau phan chia sé bang tổng có trong s6 của entropy tai mỗi node lá mới. Giá tri nay được gọi là entropy sau phan chia:
+MN
+N
+
+Ngưỡng í sé được tuning trong miền xác dinh của biến z) sao cho entropy sau phan chia dat được là nhỏ nhất. Điều nay cũng dong nghĩa với mức dé tinh khiết thu được tai node lá [a tinh khiét nhất. Đối
+với biến phân loại thi chúng ta không cn phải tuning ngưỡng ma có thé trực tiếp tinh ngay entropy.
+
+H(2", 5) = Mas) + Hays.)
+
+Một kich ban phan chia được coi là mang Iai két qua tối hon so với không phan chia nếu như két qua sau phan chia giúp gia tang độ tinh khi
+là giảm va dong thời chúng ta muốn mức dé giảm nay la tối da dé mức dé tinh khiết dat dugc cai t
+chúng ta dinh nghia chúng dưới dang một ham số mới gọi là ham tin thu (information gain):
+
+Tức là gid tri entropy trước phan chia so với sau phan chia
+n nhiều nhất. Giá tri entropy giảm chính là lượng thông tin ma ta biét thêm, giúp ich cho việc phan loại,
+
+ParseError: KaTeX parse error: No such environment: eqnarray at position 7: \begin{eqnarray\\mathbf(G)(x^M(...
+
+Ở mỗi lượt, giải thuật tim kiếm tham lam sé tim kiếm theo thứ ty từ trên xuống dưới biến z va ngưỡng ‡ tương ting, sao cho gid tri ham tin thu dat cực dai. Tức là j, ‡ là nghiém của bai toán tối ưu:
+
+5,6 = argmax G(zÓ), t; S)
+)
+
+Như vay chiến lược lựa chon của thuật toán CART tai mdi bước dé [a tim ra biến va ngưỡng phan chia ma hàm tin thu Ia lớn nhất. Các sự việc xảy ra trước khi quyết định phan chia tiếp được xem như la suv
+đã rồi va chúng ta không thay đổi được. Chinh vi thé có thé coi entropy trước phan chia H(ổ) la không đổi. Khi đó gid tri tối da của hàm tin thu dat được tương đương với gid tri cia entropy sau phan chia
+là tối thiểu. Điều nay dong nghia với chúng ta có thé lựa chon câu hỏi dé ham tin thu hoặc entropy sau phan chia la lớn nhất.
+
+Gia tri dy bao cho các quan sat thuộc về một node lá sé chinh 1a nhãn có xác suất xảy ra là lớn nhất.
+
+
+===== image56.png =====
+Bai tap: Cho bang số liệu dự báo kha nang mua (rain) dựa trên các thông tin dau vao gồm: có may (cloudy), có nang (sunny), có gid (windy):
+
+1. Nếu node gốc là windy thi entropy thu được bang bao nhiéu?
+2. Hay tinh entropy cho trường hợp néu node gốc là cloudy va sunny. So sánh entropy thu được giữa 3 nodes va kết luận dau là biến phù hợp nhất tai vi tri node gốc?
+3. Tip tuc lựa chon ra node con tiếp theo phù hgp nhất dựa trên gid tri ham tin thu thu được là lớn nhất.
+
+8.5.2. Truong hợp khong phai cay nhi phan
+
+Ở trên là bai toán tối wu cho trường hợp cay nhị phan (mỗi node quyết dinh chi gôm hai nhánh rẽ). Chúng ta có thé khái quát bai toán cho trường hợp sau rẽ nhánh tap S tao thành k tap Si, So,..., Se.
+Khi đó ham entropy sau phan chia:
+
+k M
+H(zÓ,t;8) ỆJ ys)
+
+Với t = (t1, t2,... ,, — 1) là véc to cdc ngưỡng phn chia dé tao thành k tap con.
+
+va ham tin thu:
+
+ParseError: KaTeX parse error: No such environment: eqnarray at position 7: \begin(egnarray)\mathbf{G}(x^{(...
+
+Giải thuật tim kiém tham lam cũng thực hiện từ trên xuống dưới va truy hồi tương ty như với trường hợp nhị phan.
+
+
+===== image57.png =====
+8.6. Chi s6 Gini
+
+Chi s6 Gini là một lựa chon khác bén canh ham entropy được sử dung dé do lường mức dé bat binh dang trong phan phối của các lớp. Chi s6 nay được tinh bang cách lay 1 trừ di tổng binh phương ty lệ
+phan tram 6 mỗi lớp.
+
+Với Y C. pi = 1 do p; là xác suất tương ứng với p; = p(y = i).
+Một cách kha dé dang ta ching minh được giá tri cia Gini dao động trong khoảng từ 0 đến 1 — ở. That vay.
+
+ParseError: KaTeX parse error: No such environment: eqnarray at position 7: \begin{eqnarray}(\underbrace(\s...
+
+ang thiic xay ra khi phn ph6i xéc suét p hoan toan thudc vé mot ldp, tc ta thu duidc mét céch phén chia tai node Ié [a tinh khién thun tuy ma khéng bi vén duc.
+Ở khía cạnh khác, theo bat đẳng thức cauchuy-schawrz thi:
+
+ParseError: KaTeX parse error: No such environment: eqnarray at position 7: \beginfeqnarray}(\sum_{i=1}{G}...
+
+Bang thức thu được khi phn phối xác suất hoàn toàn là dong đều giữa các lớp. Day là trường hợp được xem là vẩn duc ma ching ta không mong doi xảy ra vi mục tiêu của phan chia vẫn là các quan sat bi
+dn về một nhóm.
+
+Nhu vay tir (1) va (2) ta suyra0 < Gini < 1- ¿.
+
+Gini thường được ding đối với những biến rời rac có số lượng các trường hợp là lớn vi nó có tốc độ tinh toán nhanh han so với ham entropy. Trong thuật toán CART của sklearn thi chi s6 gini được sử dung
+thay cho hàm entropy.
+
+
+===== image58.png =====
+8.7. Cay quyét dinh cho bai toan du bao
+
+Chúng ta có thé 4p dung cay quyết dinh cho bai toán dự báo cũng tương ty nhu bai toán phan loại. Điểm khác biệt đó là ching ta không sử dung ham tin thu ma thay vào dé la độ suy giảm của phương
+sai (reduction in variance).
+
+Đầu tiên chúng ta tinh phương sai trước khi phan chia của biến muc tiêu y tai node .
+IN n)
+Dieu — 9)
+S(y;S) = He
+(y; S) 7
+
+Phương sai của biến muc tiêu sau khi phan chia sé bang tổng có trong số của phương sai trén từng nhóm:
+
+EN;
+S(uv,2, #35) = 3 FSS)
+
+=
+
+i của độ suy giảm phương sai sau phan chia:
+RV(y, 2"), t S) = S(y; 8) - S(y, 2”), tS)
+Thuật toán tim kiếm tham lam sé tim cách Iya chon 2; va ngưỡng phn chia sao cho độ suy giảm phương sai RV(q, «;, t; S) la lớn nhất. Điều nay cũng có nghĩa rang các quan sat được phan về cùng một
+
+node lá thi có gid tri dy bdo sát nhau. Nhu vay ta có thé dua ra một ước lượng chung cho node lá bang trung binh cộng của bién mục tiêu ma không lo lắng gid tri dự báo bi chệch. Như vay gid tri ước
+lượng của một quan sat (x;, yz) thuộc vé node S; sé bằng trung bình cộng biến mục tiéu của node:
+
+
+
+===== image59.png =====
+8.8. Diéu kién dừng dé giảm qua khớp (overfitting)
+
+Nếu chúng ta tiếp tục phan chia cay quyét dinh liên tuc thi số lượng các quan sat 6 mỗi node lá sé giảm dan. Cho tới mt ngưỡng độ sâu p nào đó, số quan sat còn lai 6 mỗi node lá sé rat nhỏ va tham ch
+chi một vai quan sát. Các kết qua dự báo dựa trén tap mẫu rat nhỏ nay không còn mang tinh tổng quát va do dé hién tượng qué khớp thường xay ra. Dé tránh hiện tượng qué khớp cũng như tiét kiệm chi
+phí tính toán, chúng ta sé ding việc phan chia khi dat một số điều kiện:
+
+* 6 sâu của cây nhị phan cham một ngưỡng tối thiểu.
+
+* Số lượng các quan sat của một node lá dat ngưỡng tối thiểu. Chẳng han nhu: 30 quan sát thuộc node lá cho bai toán phan loại nhị phan thi quyết định phan lớp là đủ tin cậy.
+* Node lá hoàn toàn thuộc về một nhóm duy nhất. Tic node phan chia [a hoàn toàn tinh khiết.
+
+* Số lượng các node phan chia dat ngưỡng.
+
+*  Số lượng các node lá dat ngưỡng. Số lượng node lá cing nhiều thi mô hình càng trở nên phức tap.
+
+* ham tin thu giảm dưới một ngưỡng rat nhỏ. Đồng nghĩa với việc phan chia thêm cũng không có nhiều ý nghia.
+
+Ngoài các phương pháp giảm thiểu qué khớp nêu trén chúng ta còn có thé giảm thiéu qué khớp thông qua phương pháp cét tia (pruning).
+
+8.9. Cắt tỉa (pruning)
+
+Nội dung của phương pháp cat tia đó là dau tién chúng ta sé huấn luyện mô hình cây quyết định trên tap tap huấn luyện (train dataset) sao cho toàn bộ các quan sát đều được phan loại về đúng nhãn. Sat
+đó loại bỏ dan các node lá ở bên dưới va chuyển node cha trực tiếp của chúng thành node lá. Cac node lá chi bj loại bỏ khi độ chinh xác dy báo trên tap kiểm định (validation dataset) được cai thiện. Qué
+trình sé dừng khi độ chính xác trên tap kiểm tra không còn tiếp tục được cai thiện. Phuong pháp trên được gọi là phương pháp giảm thiểu sai số cất tia (reducing error pruning).
+
+Ngoài ra còn một ky thuat khác sé tim cách giảm thiểu mức độ cồng kềnh cia cây quyết định thông qua kiểm soát số lượng node ló. Theo đó phương pháp nay cộng thêm thành phần K là số lượng node
+lá vào ham mat mat la tổng entropy có trong số của các node con. Gia sử cay quyết định cuối cling phan loại đúng toàn bộ các quan sat về K tap tai node lá là Si, Sp, ..., Sx:
+
+ParseError: KaTeX parse error: Expected 'EOF', got ‘_' at position 24: ...{L}(\text{final_tree}) = \sum_{...
+
+Trong dé NV là số lượng quan sat va |;| là kích thước của node lá.
+
+Cũng giống như các phương pháp điều chuẩn khác, chúng ta lựa chon À là một gid tri dương tương đối nhỏ dai diện cho thanh phan kiểm soát. Gia tri nay lớn thé hiện vai trò của số lượng node lá tac
+động lên ham chi phí lớn. Ở thời điểm ban dau dé phan loại đúng toàn bộ các quan sat thi can số lượng node Id là - tương đối lớn. Sau dé chúng ta sé ct tia dan cay quyết dinh sao cho mỗi một lugt cắ
+tia ham mat mát giảm mot lượng là lớn nhất. Qua trình cat tia sé dừng cho tới khi ham mat mát không còn tiếp tục giảm được nữa.
+
+
+===== image6.png =====
+Phan cum K-Means (minh hoa)
+
+random_state=42
+Ding dé cố dinh hat giống ngẫu nhiên (random seed).
+KMeans chon ngẫu nhiên các tâm cum ban dau, nén nếu ban không cố dinh seed, mdi lần chay sé ra cum khác nhau một chit.
+
+Khi dat random_state=42, ban sé nhận được kết qua giống nhau mỗi lần chạy, giúp tai lap (reproducibility).
+
+Con số 42 không có ý nghĩa đặc biệt — chi là số được dùng phổ biến trong tai liệu khoa hoc máy tinh . KMeans còn có: Tham số Ý nghĩa init='k-means+ +' Cách chon tm cum ban dau thông minh hon
+imac định). max iter=300 Số lần lap tối da cia thuật toán. n init=10 Số Fan chạy K-Means với cdc tâm ban dau khác nhau dé chon két qua tốt nhất. tol=1e-4 Ngưỡng sai số dé dừng thuật toán (néu thay đ
+am cum < tol).
+
+
+===== image60.png =====
+8.10. Tuning siêu tham số cho mô hinh cay quyết định
+
+Trong thuật toán cây quyết định chúng ta có thé quan tâm tdi một số tham số có thé được sử dung dé tuning. Đó là những tham số chính bên dưới:
+
+DecisionTreeRegressor(*,
+criterion="gini',
+splitter='best',
+max_depth=None,
+min_samples_split=2,
+min_samples_leaf=1,
+
+max features=None,
+max_leaf_nodes=None,
+
+min impurity_decrease=9.0,
+min_impurity_split=None
+
+)
+
+Trong đó:
+* criterion: La ham số dé do lường chat lượng phan chia ở mỗi node. Có hai lựa chon la ind va entropy.
+* max depth: Độ sâu t6i da cho một cây quyết dinh. Đối với mô hinh bi quá khớp thi chúng ta cần giảm độ sâu va vi khớp thi gia tang độ su.
+* min samples split: Kích thước mẫu tối thiểu được yêu cau dé tiếp tục phan chia đối với node quyết định. Được sit dung dé tránh kích thước của node lá qué nhỏ nhằm giảm thiểu hiện tượng qué
+khớp.
+* max features: Số lượng các biến được lựa chon dé tim kiếm ra biến phan chia tốt nhất 6 mỗi lượt phan chia.
+* max leaf_nodes: Số lượng các node lá tối da của cây quyết định. Thường được thiết lap khi muốn kiểm soát hiện tượng qué khớp.
+* min_impurity decrease: Chúng ta sé tip tục phan chia một node nếu như sự suy giảm của độ tinh khiết nếu phân chia lớn hon ngưỡng nay. im
+
+* min impurity. split: Ngưỡng dừng sớm dé kiểm soát sự gia ting của cây quyết định. Thường được sử dung dé tránh hiện tượng qué khớp. Chúng ta sé tiếp tục chia node nếu độ tinh khiết cao hon
+ngưỡng nay.
+
+
+===== image61.png =====
+rom sklearn.pipeline import Pipeline
+from sklearn.tree import DecisionTreeClassifier
+
+rom sklearn.model_selection import GridSearchcv
+parameters
+
+"c1£_ critenion':['gini', "entropy'],
+[2, 41,
+F_min_samples leaf": [5, 10, 13],
+“clf_max_leaf_nodes’: [8, 16, 32],
+
+pipeline = Pipeline(
+steps=[("clf", DecisionTreeClassifier())]
+
+)
+
+gscv = GridSearchCV(pipeline, parameters, cv=5, n_jobs=12, scoring="accuracy’, return_train_score=True, error_score=@, verbose=3)
+gscv.fit(X, y)
+Python
+
+8.11. Bai tap
+
+1. Một cay nhi phan có độ sau Ia 5. Hỏi số lượng các node lá của nó là bao nhiêu?
+
+2. Nếu cây nhị phan trên có được hồi qui trên một bộ dữ liệu kích thước là 10000 quan sat thi trung binh mdi node lá có bao nhiêu quan sat ? Số lượng quan sat nay có đủ lớn dé tin cay vào két luận
+phân loại ở các node lá không ?
+
+3. Một cây quyết dinh có độ sâu là 5 thi gid tri dy báo về nhãn của nó được tao thành tix bao nhiêu câu hỏi ?
+4, Một bai toán phan loại gdm 5 lớp. Giá tr ham entropy lớn nhất có thé thu được ở mỗi node lá la bao nhiêu?
+
+5. Gfa tri lớn nhất cia chi số Gini thu được 6 bai toán phan loại ở câu 3 nhưng 4p dung trên mỗi node lá là bao nhiêu?
+6. Khi mô hình gap hiện tượng qué khớp thi chúng ta nên ting độ sâu hay giảm dO sâu của cy quyét định?
+7. Trong bai toán dy báo thi gid tri dự bao của các quan sat thuộc cùng một node được tinh như thé nao?
+
+8. Si dung bộ dữ liệu iris. Hay xây dung bai toán dự báo biến mục tiêu là 1: nếu roi vào loài hoa Versicolor va 0 néu Ia các loài hoa còn lai. Biến dau vào Ia 4 trường kích thước dai, rộng của dai hoa va
+cánh hoa. Hay thực hiện grid search trén các tham số chang han như độ sau, số lượng mau tối thiểu tai node lá, số lượng node lá tối da.... dé tim ra mô hình có độ chinh xác tốt nhất.
+
+
+===== image7.png =====
+from sklearn.datasets import load iris
+1f = load_iris(as_frame=True) data
+dF
+
+sepal length (cm) sepal width (cm) petal length (cm) petal width (cm)
+
+H 51 35 14 02
+1 49 30 14 02
+2 47 32 13 02
+3 ¬ 34 15 02
+4 50 36 14 02
+145 67 30 52 23
+146 63 25 50 19
+147 65 30 52 20
+148 62 34 54 23
+149 59 30 51 18
+
+150 rows x 4 columns
+
+rom sklearn.cluster i
+
+port KHeans
+kmeans = KMeans(n_clusters = 3)
+label = kmeans.fit_predict(df)
+
+print (label)
+
+H111111111111111111111111111111111111
+1111111111111002000000000000000000000
+0002000000000000000000080020222202222
+2200222202020220022222022220222022202
+20]
+
+c:\Users\Simming\AappData\ Local \Programs \Python\Python311\Lib\site-packages\sklear:
+
+warnings.warn(
+
+
+===== image8.png =====
+label_@ = df[1abel
+1abel 1 = df[label =
+1abel 2 = df[1abel
+
+cols = df.columns
+
+plt.scatter(label_@[cols[@]], label_@[cols[1]], color
+plt.scatter(label_1[cols[@]], 1abel 4[cols[1]], color
+p1t.show()
+
+plt.scatter(label_@[cols[@]] „ 1abel @[cols[1]], color
+plt.scatter(label_1[cols[@]] „ 1abel 1[cols[1]], color
+plt.scatter(label_2[cols[@]] „ 1abel 2[cols[1]], color
+p1t.show()
+
+
+
+===== image9.png =====
+-show()
+
+

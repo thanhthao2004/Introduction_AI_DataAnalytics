@@ -1,0 +1,60 @@
+Sinh viên làm các câu hỏi sau theo dữ liệu của mỗi sinh viên
+	1	Đọc File với các file trong thư mục dữ liệu. Ứng với mỗi file sinh viên thực hiện  các câu sau. Hiển thị toàn bộ dữ liệu của file dữ liệu đã đọc 
+	2	Đọc file với chỉ định không có header, dòng header của chúng ta đã biến thành 1  bản ghi dữ liệu. Hiển thị toàn bộ dữ liệu của file dữ liệu đã đọc 
+	3	Đọc File với các tuỳ chọn mặc định. Hiển thị 5 dòng dữ liệu đầu tiên 
+	4	Đọc File với các tuỳ chọn mặc định. Hiển thị 5 dòng dữ liệu cuối cùng 
+	5	Chuyển kiểu dữ liệu cho 1 cột nào đó 
+	6	Xem chiều dài của df, tương đương shape[0]  print('Len:', len(df)) 
+	7	Xem thông tin dataframe vừa đọc được  df.info() 
+	8	Xem kích thước của dataframe  print('Shape:', df.shape) 
+	9	Hiển thị dữ liệu của cột thứ 3  df[‘tên cột’] 
+	10	Hiển thị dữ liệu của cột 1,2,3,5,6 
+df[['Tên cột 1', 'Tên cột 2', 'Tên cột 3']]
+	11	Hiển thị 5 dòng dữ liệu đầu tiên gồm các cột 1,2,3,5,6  df[['Tên cột 1', 'Tên cột 2', 'Tên cột 3']].head[5] 
+	12	Hiển thị 5 dòng dữ liệu đầu tiên theo chỉ số  df[0:5] 
+	13	Hiển thị 5 dòng dữ liệu đầu tiên theo chỉ số gồm các cột 1,2,3,5,6  df[['Tên cột 1', 'Tên cột 2', 'Tên cột 3']][:5] 
+	14	Loại bỏ các dòng trùng nhau  df.drop_duplicates(inplace=True) 
+	15	Loại bỏ các dòng trống có dữ liệu của 1 cột là trống  df['ADDRESSLINE2'].isna().sum() 
+	16	Điền dữ liệu cho 1 cột thiếu dữ liệu thành có giá trị là không biết (“unknown”)  df["ADDRESSLINE2"].fillna('Unknown',inplace=True)  df['ADDRESSLINE2'].isna().sum() 
+	17	Lấy dữ liệu của 1 cột theo dạng chuỗi  df["QUANTITYORDERED"] 
+	18	Lấy dữ liệu của 1 cột về một mảng  df["QUANTITYORDERED"].values 
+	19	Lấy dữ liệu của 1 cột về một mảng  df["QUANTITYORDERED"].values 
+20.Lấy dữ liệu từ dòng số 4 đến dòng 9
+df[4:10]
+	21	Đọc dữ liệu từ dòng 4 đến dòng 9  df.loc[4:10]  df.iloc[4:10] 
+	22	Lấy thông tin tại dòng có chỉ số là 2  df.loc[2] 
+	23	Lấy thông tin từ dòng 4 đến dòng 10 của một số cột  df.loc[4:10,['QUANTITYORDERED','SALES']] 
+24.Lấy thông tin dòng 2 đến dòng 9, từ cột 4 đến cột 7
+df.iloc[2:9,4:7]
+	25	Lấy dữ liệu tại chỉ số (index) là 2  df.iloc[2] 
+	26	Lấy dữ liệu từ dòng đầu tiên đến dòng 9 dùng iloc  df.iloc[:10] 
+	27	Lấy dữ liệu từ dòng đầu tiên đến dòng 9 gồm các cột 4 đến cột 7 dùng iloc 
+df.iloc[2:9,4:7]
+	28	Sắp xếp dữ liệu theo 1 cột tăng dần  df.sort_values(by='SALES',ascending=True) 
+	29	Sắp xếp dữ liệu theo nhiều tiêu chí  df.sort_values(by=['QUANTITYORDERED','PRICEEACH'],ascending=[True,Fals  e]) 
+	30	Lọc dữ liệu theo 1 điều kiện  df[df[‘SALES']>5000]  df.loc[df['SALES']>5000] 
+	31	Lọc dữ liệu theo nhiều điều kiện  df[(df['SALES']>5000) & (df['QUANTITYORDERED']>40)] 
+	32	Lọc giá trị và gán điều kiện dùng loc  df.loc[df['PRICEEACH']>=65,'FLAG']='EXPENSIVE' df.loc[df['PRICEEACH']<65,'FLAG']='CHEAP' #df['FLAG'] df[['PRICEEACH','FLAG']]#[:50] 
+	33	Viết hàm trả về giá trị có nhiều điều kiện và áp dụng hàm gán trị trả về cho 1 cột def foo(x):  if x<10: return 'BAD'  elif x>=10 and x<50: return 'GOOD'  else: return 'EXCELLENT'  df['WORTH']=df[['QUANTITYORDERED']].applymap(foo)  df[['QUANTITYORDERED','WORTH']] 
+	34	Ánh xạ giá trị tới 1 cột  dict_map ={1:'Qui_1',2:'Qui_2',3:'Qui_3',4:'Qui_4'} df['QTR_ID']=df['QTR_ID'].map(dict_map) df['QTR_ID'] 
+	35	Lấy những dòng dữ liệu bằng 1 điều kiện nào đó df[['QUANTITYORDERED','PRICEEACH']].loc[df['YEAR_ID']==2003] 
+	36	Hiển thị các bản ghi có cột kiểu số hơn 25 df[df[‘age’]<25]  Tuoitre =df[df[‘age’]<25] 
+Tuoitre[:5]
+	37	Sinh viên tự nghĩ ra các câu hỏi đọc dữ liệu theo các điều kiện và thực hiện lại các  câu hỏi đó. Yêu cầu sinh viên ghi lại các lệnh và thực hiện các câu hỏi đó. Sau đó  chụp kết quả dán vào file word 
+	38	Thực hiện 1 ví dụ để lấy giá trị của một cột trả về dưới dạng numpy array trong thư  viện pandas python. 
+39.Sử dụng thư viện random để sinh ngẫu nhiên một list năm sinh và thêm vào
+dataframe.
+	40	Thêm 1 cột vào file dữ liệu 
+	41	Thêm 1 cột vào dữ liệu theo tiêu chí nếu điều kiện thoả thì giá trị mặc định là True,  ngược lại là False. 
+	42	Tạo 1 cột mới có giá trị rỗng 
+	43	Thêm 1 bản ghi trong dataframe 
+	44	Sửa giá trị của cột 
+	45	Xóa cột trong dataframe 
+	46	Xóa bản ghi theo chỉ số 
+	47	Sử dụng hàm describe() để thống kê dữ liệu 
+	48	Xem thống kê trên từng cột 
+	49	Vẽ đồ thị xem phân bổ giá trị của 1 trường trong dataframe 
+50. Tạo mới dataframe từ các python list 51. Sắp xếp dataframe 52. Nối 2 dataframe (Lỗi) 53. Xáo trộn các bản ghi trong dataframe 54. Lưu dataframe về file csv
+55. Tối ưu bộ nhớ khi dùng pandas 56. Tạo 1 file chương trình hiện các menu gồm các mục trên và mục cuối là thoát. Người
+dùng chọn chức năng nào trong menu thì chương trình sẽ thực hiện chức năng tương
+ứng.
